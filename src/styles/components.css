@@ -44,8 +44,8 @@ table {
 
 
 :root{
-	--background-color: #EEF1EF;
-
+	--background-color: #ffffff;
+	--header-color:#252525;
 	--grey-color: #1c2321;
 
 	--blue-color: #7d98a1;
