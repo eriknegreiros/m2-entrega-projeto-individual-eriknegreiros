@@ -29,7 +29,10 @@ body {
 header {
     height: 130px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    background-color: var(--header-color);
 }
+
+
 
 .header_div {
     display: flex;
@@ -44,6 +47,10 @@ header {
 .logo_negreiros {
     width: 250px;
     height: 250px;
+}
+
+a{
+    text-decoration: none;
 }
 
 .header_div_btn {
@@ -187,7 +194,7 @@ header {
     gap: 20px;
     align-items: center;
     border-radius: 10px;
-    background-color: white;
+    background-color: rgb(237, 237, 237);
     width: 300px;
     height: 130px;
     margin: 20px;
@@ -207,14 +214,17 @@ header {
     bottom: 10px;
     color: var(--blue-color-4);
     font-weight: bold;
+    text-align: center;
 }
 
 .name_department{
     font-family: var(--font);
+    text-align: center;
 }
 
 .quality{
     font-family: var(--font);
+    text-align: center;
 }
 
 
@@ -328,13 +338,14 @@ header {
 
 .card_bg{
     border-radius: 10px;
-    background-color: white;
-    width: 250px;
-    height: 200px;
+    width: 300px;
+    height: 180px;
+    gap: 30px;
+    
 }
 
 .div_border{
-    width: 250px;
+    width: 300px;
 }
 
 .name_company{
