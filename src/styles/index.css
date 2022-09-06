@@ -29,7 +29,9 @@ body {
 header {
     height: 130px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-    background-color: var(--header-color);
+    background: rgb(37,37,37);
+background: linear-gradient(71deg, rgba(37,37,37,1) 0%, rgba(3,46,126,1) 100%);
+
 }
 
 
@@ -50,7 +52,8 @@ header {
 }
 
 a{
-    text-decoration: none;
+	text-decoration: none;
+	color: var(--blue-color-2);
 }
 
 .header_div_btn {
