@@ -17,6 +17,15 @@ a{
     color: var(--grey-color);
 }
 
+
+.toast{
+    font-family: var(--font);
+    width: 80%;
+    height: 20px;
+    text-align: center;
+    color: var(--white);
+}
+
 .img_logo {
     position: relative;
     bottom: 10px;
