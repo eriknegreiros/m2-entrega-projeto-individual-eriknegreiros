@@ -21,6 +21,15 @@
     cursor: pointer;
 }
 
+
+.toast{
+    font-family: var(--font);
+    width: 80%;
+    height: 20px;
+    text-align: center;
+    color: var(--white);
+}
+
 .info {
     font-family: var(--font);
     color: white;
