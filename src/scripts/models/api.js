@@ -1,6 +1,10 @@
 import {
     homepageList,
-    loginAndRegister
+    loginAndRegister,
+    dashboard,
+    profile, 
+    sector,
+    department
 } from "./axios.js"
 
 import {
@@ -63,4 +67,44 @@ export class Request {
             })
         return base
     }
+
+    static async requestUser() {
+        const base = await dashboard
+            .get(`/users/profile`)
+            .then(res => res.data)
+            .catch(err => console.log(err))
+        return base
+    }
+
+    static async requestChangeProfile(body) {
+        const base = await profile
+        .patch(`/users`, body)
+        .then((res) =>{
+            Toast.create('Dados Atualizados com Sucesso', "#00992e")
+            setTimeout(() =>{
+                window.location.replace('../../../src/pages/dashboard.html')
+            },3000)
+            console.log(res)
+        })
+        .catch(err => console.log(err))
+        return base
+    }
+
+    static async requestSector() {
+        const base = await sector 
+        .get(`/sectors`)
+        .then(res => res.data)
+        .catch(err => console.log(err))
+        return base
+    }
+
+    static async requestDepartment(){
+        const base = await department
+        .get(`/departments`)
+        .then(res => res.data)
+        .catch(err => console.log(err))
+        return base
+    }
 }
+
+
