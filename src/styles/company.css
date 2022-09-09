@@ -115,127 +115,6 @@ a{
     transform-origin: top;
 }
 
-.flex_dash {
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-    animation: growDown 400ms ease-in-out forwards;
-    transform-origin: top;
-}
-
-main {
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
-}
-
-.div_welcome {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(230, 230, 230);
-    width: 90vw;
-    border-radius: 20px;
-
-}
-
-.div_text_dash {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.text_h2 {
-    font-family: var(--font);
-    text-align: center;
-    margin-top: 10px;
-    font-size: 1.1rem;
-    font-weight: bold;
-}
-
-.text_p {
-    font-family: var(--font);
-    text-align: center;
-    font-size: 1rem;
-}
-
-.img_dash {
-    width: 270px;
-    height: 200px;
-    animation: growDown 400ms ease-in-out forwards;
-    transform-origin: top;
-}
-
-.div_company {
-    margin-top: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-}
-
-.bg_color {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(230, 230, 230);
-    width: 90vw;
-    height: 40vh;
-    border-radius: 20px;
-    gap: 5px;
-}
-
-
-.name_of_title{
-    margin: 10px;
-    font-family: var(--font);
-    font-size: 1.3rem;
-    text-align: center;
-    font-weight: bold;
-}
-
-
-.name_of_sector{
-    font-family: var(--font);
-    font-size: 1rem;
-    text-align: center;
-}
-
-.title_department{
-    margin: 10px;
-    font-family: var(--font);
-    font-size: 1.3rem;
-    text-align: center;
-    font-weight: bold;
-}
-
-.name_of_department{
-    font-family: var(--font);
-    font-size: 1rem;
-    text-align: center;
-}
-
-.title_company{
-    margin: 10px;
-    font-family: var(--font);
-    font-size: 1.3rem;
-    text-align: center;
-    font-weight: bold;
-}
-
-.name_of_company{
-    font-family: var(--font);
-    font-size: 1rem;
-    text-align: center;
-}
-
-
 
 @keyframes growDown {
     0% {
@@ -252,6 +131,7 @@ main {
         transform: rotateX(0deg);
     }
 }
+
 
 @media(min-width:768px) {
     .div_aside_full {
@@ -292,44 +172,4 @@ main {
         display: flex;
         flex-direction: row;
     }
-
-    .div_welcome {
-        flex-direction: row;
-        width: 70vw;
-        height: 35vh;
-        gap: 10px;
-    }
-
-
-    .img_dash {
-        width: 260px;
-        height: 250px;
-    }
-
-    .div_company {
-        display: flex;
-        flex-direction: row;
-        gap: 20px;
-    }
-
-    .bg_color {
-        width: 22vw;
-        height: 42vh;
-    }
-
-
-    .text_h2{
-        font-size: 2rem;
-        margin-bottom: 10px;
-    }
-    .text_p{
-        font-size: 1.3rem;
-    }
-
-    .flex_dash{
-        gap: 30px;
-    }
-
-
-
 }

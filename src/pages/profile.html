@@ -6,11 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/components.css">
-    <link rel="stylesheet" href="../styles/dashboard.css">
-    <link rel="stylesheet" href="../styles/buttons.css">
-    <link rel="shortcut icon" href="../assets/favicon.png">
+    <link rel="stylesheet" href="../styles/profile.css">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-    
+    <link rel="shortcut icon" href="../assets/favicon.png">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <title>Negreiros ERP</title>
 </head>
 
@@ -19,14 +18,14 @@
         <aside>
             <div class="div_aside_full">
                 <div class="div_img_open">
-                    <img class="logo_negreiros" src="../assets/logoNegreiros.png" alt="">
+                    <a href="./dashboard.html"><img class="logo_negreiros" src="../assets/logoNegreiros.png" alt=""></a>
                     <img class="menu_img " src="../assets/menu.png" alt="">
                     <p class="close_menu none">X</p>
                 </div>
 
                 <div class="close_menu_div menu_order">
                     <div class="div_aside_up ">
-                        <p class="menu_nav profile"> <a href="../pages/profile.html"> Perfil </a> </p>
+                        <p class="menu_nav"> <a href="../pages/profile.html"> Perfil </a> </p>
                         <p class="menu_nav sector"><a href="../pages/sectors.html">Setores</a></p>
                         <p class="menu_nav"><a href="../pages/company.html">Empresas</a></p>
                         <p class="menu_nav">Departamento</p>
@@ -39,30 +38,28 @@
             </div>
         </aside>
 
-        <div class="flex_dash">
-            <main>
-                <div class="div_welcome">
-                    <div class="div_text_dash">
-                        
-                    </div>
-                    
-                </div>
-            </main>
+        <section class="section_change_profile">
+            <h1 class="title_change">Altere seus Dados</h1>
+            <div class="div_bg_profile">
+                <img class="profile_img" src="../assets/profileImg.png" alt="">
 
-
-            
-            <section class="div_company">
-                <div class="bg_color">
+                <div class="div_input_profile">
+                    <input class="input_profile username_profile" placeholder="Username" type="text">
+                    <input class="input_profile email_profile" placeholder="E-mail" type="email">
+                    <input class="input_profile password_profile" placeholder="Password" type="password">
+                    <button class="btn_atualizar">Atualizar Dados</button>
                 </div>
 
-            </section>
-        </div>
+            </div>
+        </section>
     </div>
 
-   
+
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script type="module" src="../scripts/dashboard.js"></script>
+    
+    <script type="module" src="../scripts/profile.js"></script> 
+   
 </body>
 
 </html>

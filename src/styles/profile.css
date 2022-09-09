@@ -4,9 +4,17 @@
 }
 
 
-a{
+a {
     text-decoration: none !important;
     color: white !important;
+}
+
+.toast{
+    font-family: var(--font);
+    width: 80%;
+    height: 20px;
+    text-align: center;
+    color: var(--white);
 }
 
 .div_aside_full {
@@ -48,7 +56,6 @@ a{
     top: 30px;
     right: 15px;
     font-family: var(--font);
-
 }
 
 .close_menu_div {
@@ -57,15 +64,15 @@ a{
     justify-content: center;
     flex-direction: column;
     position: relative;
-    bottom: 70px;
+    bottom: 90px;
 }
-
 
 .div_aside_up {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
     gap: 40px;
 }
 
@@ -101,7 +108,6 @@ a{
 
 }
 
-
 .none {
     display: none;
 }
@@ -115,126 +121,74 @@ a{
     transform-origin: top;
 }
 
-.flex_dash {
+.section_change_profile{
     width: 100vw;
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    justify-content: center;
+    align-items: center;
     animation: growDown 400ms ease-in-out forwards;
     transform-origin: top;
 }
 
-main {
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
+.title_change{
+    margin-top: 10px;
+    font-size: 2rem;
+    font-family: var(--font);
+    text-align: center;
+
 }
 
-.div_welcome {
+
+.div_bg_profile{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color:rgb(230, 230, 230);
+    width: 95vw;
+    height: 66vh;
+    border-radius: 20px;
+}
+
+
+.profile_img{
+    margin-top: 15px;
+    width: 100px;
+    height: 100px;
+}
+
+.div_input_profile{
     margin-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: rgb(230, 230, 230);
-    width: 90vw;
+    gap: 15px;
+}
+
+.input_profile{
+    width: 250px;
+    height: 30px;
     border-radius: 20px;
-
-}
-
-.div_text_dash {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.text_h2 {
+    padding-left: 8px;
+    border: 1px solid var(--blue-color-5);
     font-family: var(--font);
-    text-align: center;
-    margin-top: 10px;
-    font-size: 1.1rem;
-    font-weight: bold;
 }
 
-.text_p {
+.btn_atualizar{
+    margin-top: 20px;
+    width: 130px;
+    height: 25px;
+    border-radius: 8px;
+    border: 2px solid var(--blue-color-3);
+    color: var(--blue-color-2);
     font-family: var(--font);
+    font-weight: 600;
+    background-color: white;
     text-align: center;
-    font-size: 1rem;
+    cursor: pointer;
 }
-
-.img_dash {
-    width: 270px;
-    height: 200px;
-    animation: growDown 400ms ease-in-out forwards;
-    transform-origin: top;
-}
-
-.div_company {
-    margin-top: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-}
-
-.bg_color {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(230, 230, 230);
-    width: 90vw;
-    height: 40vh;
-    border-radius: 20px;
-    gap: 5px;
-}
-
-
-.name_of_title{
-    margin: 10px;
-    font-family: var(--font);
-    font-size: 1.3rem;
-    text-align: center;
-    font-weight: bold;
-}
-
-
-.name_of_sector{
-    font-family: var(--font);
-    font-size: 1rem;
-    text-align: center;
-}
-
-.title_department{
-    margin: 10px;
-    font-family: var(--font);
-    font-size: 1.3rem;
-    text-align: center;
-    font-weight: bold;
-}
-
-.name_of_department{
-    font-family: var(--font);
-    font-size: 1rem;
-    text-align: center;
-}
-
-.title_company{
-    margin: 10px;
-    font-family: var(--font);
-    font-size: 1.3rem;
-    text-align: center;
-    font-weight: bold;
-}
-
-.name_of_company{
-    font-family: var(--font);
-    font-size: 1rem;
-    text-align: center;
-}
-
 
 
 @keyframes growDown {
@@ -254,6 +208,11 @@ main {
 }
 
 @media(min-width:768px) {
+    .flex{
+        flex-direction: row;
+    }
+    
+    
     .div_aside_full {
         width: 250px;
         align-items: center;
@@ -271,6 +230,7 @@ main {
     .div_aside_up {
         position: relative;
         bottom: 24vh;
+
     }
 
     .close_menu {
@@ -288,48 +248,13 @@ main {
         align-items: center;
     }
 
-    .flex {
-        display: flex;
-        flex-direction: row;
+    .div_bg_profile{
+        width: 500px;
+        height: 350px;
     }
 
-    .div_welcome {
-        flex-direction: row;
-        width: 70vw;
-        height: 35vh;
-        gap: 10px;
+    .title_change{
+        position: relative;
+    bottom: 20px;
     }
-
-
-    .img_dash {
-        width: 260px;
-        height: 250px;
-    }
-
-    .div_company {
-        display: flex;
-        flex-direction: row;
-        gap: 20px;
-    }
-
-    .bg_color {
-        width: 22vw;
-        height: 42vh;
-    }
-
-
-    .text_h2{
-        font-size: 2rem;
-        margin-bottom: 10px;
-    }
-    .text_p{
-        font-size: 1.3rem;
-    }
-
-    .flex_dash{
-        gap: 30px;
-    }
-
-
-
 }
