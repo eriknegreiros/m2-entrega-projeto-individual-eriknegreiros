@@ -213,7 +213,7 @@ class company {
 
                 nameCompany.classList.add('name_of_company')
 
-                nameCompany.innerText = `${index + 1} - ${element.description}`
+                nameCompany.innerText = `${index + 1} - ${element.name}`
 
                 bgColor.append(nameCompany)
             })

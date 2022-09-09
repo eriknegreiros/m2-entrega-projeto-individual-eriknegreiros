@@ -53,6 +53,111 @@ export class Dashboard {
 }
 
 
+class Company {
+    static renderCompany(data) {
+
+        if (localStorage.getItem('is_admin') == 'true') {
+            const allCardsCmpany = document.querySelector('.all_cards_company')
+
+            allCardsCmpany.innerHTML = ''
+
+            data.forEach((element) => {
+                const bgCard = document.createElement('div')
+                const nameCompany = document.createElement('h1')
+                const hourCompany = document.createElement('p')
+                const activityCompany = document.createElement('p')
+
+
+                bgCard.classList.add('bg_card_company')
+                nameCompany.classList.add('name_company')
+                hourCompany.classList.add('hour_company')
+                activityCompany.classList.add('activity_company')
+
+
+                nameCompany.innerText = element.name
+                hourCompany.innerText = element.opening_hours
+                activityCompany.innerText = element.sectors.description
+
+
+                bgCard.append(nameCompany, hourCompany, activityCompany)
+                allCardsCmpany.append(bgCard)
+            })
+        } else {}
+    }
+
+    static searchCompany() {
+        const btnSearch = document.querySelector('.btn_search_company')
+
+        btnSearch.addEventListener('click', async (event) => {
+            event.preventDefault()
+
+            const input = document.querySelector('.input_company')
+
+            const allCards = await Request.requestCompanyHomePage()
+
+            const pesquisar = input.value.toLowerCase()
+
+            const filtered = allCards.filter(element =>
+                element.name.toLowerCase().includes(pesquisar) ||
+                element.sectors.description.toLowerCase().includes(pesquisar)
+            )
+            this.renderCompany(filtered)
+            input.value = ''
+        })
+    }
+
+    static async createCompany() {
+        const btnCreate = document.querySelector('.create_company_btn')
+        const modal = document.querySelector('.create_modal')
+
+        btnCreate.addEventListener('click', () => {
+            modal.classList.remove('close_menu')
+        })
+
+        const closeModal = document.querySelector('.closed_btn')
+        closeModal.addEventListener('click', () => {
+            modal.classList.add('close_menu')
+        })
+
+
+        const btnSend = document.querySelector('.btn_send')
+
+        btnSend.addEventListener('click', async (event) => {
+            event.preventDefault()
+
+            const name = document.querySelector('.name_comp')
+            const hour = document.querySelector('.hour_comp')
+            const description = document.querySelector('.description_comp')
+
+            const select = document.getElementById('valores')
+
+            console.log(name.value)
+            console.log(hour.value)
+            console.log(description.value)
+            console.log(select.value)
+
+            const data = {
+                name: name.value,
+                opening_hours: hour.value,
+                description: description.value,
+                sector_uuid: select.value
+            }
+            
+            await Request.requestCreateCompany(data)
+
+        })
+
+    }
+
+
+}
+
+
 
 Dashboard.Userlogged()
 Dashboard.showMenu()
+
+const enterprise = await Request.requestCompanyHomePage()
+Company.renderCompany(enterprise)
+Company.searchCompany()
+Company.createCompany()
