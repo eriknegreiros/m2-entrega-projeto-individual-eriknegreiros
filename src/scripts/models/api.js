@@ -4,12 +4,15 @@ import {
     dashboard,
     profile, 
     sector,
-    department
+    department,
+    createCompany
 } from "./axios.js"
 
 import {
     Toast
 } from "../toastify.js"
+
+import { Toast2 } from "../toastify.js"
 
 
 
@@ -18,7 +21,7 @@ export class Request {
     static async requestCompanyHomePage() {
         const base = await homepageList
             .get(`/companies`)
-            .then(res => res.data)
+            .then(res => res.data.reverse())
             .catch(err => console.log(err))
         return base
     }
@@ -40,7 +43,7 @@ export class Request {
                 localStorage.setItem('uuid', res.data.uuid)
                 Toast.create('Login Realizado com sucesso', "#00992e")
                 setTimeout(() => {
-                    window.location.replace("../../pages/dashboard.html")
+                    window.location.replace("../../../src/pages/dashboard.html")
                 }, 1000)
                 return res.data
             })
@@ -57,7 +60,7 @@ export class Request {
             .then((res) => {
                 Toast.create('Conta criada com Sucesso', "#00992e")
                 setTimeout(() => {
-                    window.location.replace("../../pages/login.html")
+                    window.location.replace("../../../src/pages/login.html")
                 }, 1000)
                 return res
             })
@@ -82,7 +85,7 @@ export class Request {
         .then((res) =>{
             Toast.create('Dados Atualizados com Sucesso', "#00992e")
             setTimeout(() =>{
-                window.location.replace('../../pages/dashboard.html')
+                window.location.replace('../../../src/pages/dashboard.html')
             },3000)
             console.log(res)
         })
@@ -105,6 +108,22 @@ export class Request {
         .catch(err => console.log(err))
         return base
     }
+
+    static async requestCreateCompany(body){
+        const base = await createCompany
+        .post(`/companies`, body)
+        .then((res =>{
+            Toast2.create('Empresa cadastrada com Sucesso', "#00992e")
+            return res
+        }))
+        .catch((err) =>{
+            Toast2.create('Empresa Não Cadastrada, verifique os campos', "#d90a02")
+            console.log(err.response.data)
+        })
+        return base
+    }
+
+
 }
 
 

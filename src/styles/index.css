@@ -99,7 +99,7 @@ a{
 
 .man_work {
     position: relative;
-    bottom: 40px;
+    bottom: 20px;
     width: 260px;
     height: 50vh;
     object-fit: cover;
@@ -260,10 +260,10 @@ a{
 
     .man_work {
         width: 40vw;
-        height: 50vh;
-        object-fit: cover;
-        position: static;
-        bottom: 0px;
+        height: 80vh;
+        right: 20px;
+        position: relative;
+        top: 20px;
     }
 
     .section_text {

@@ -79,7 +79,6 @@ class ChangeProfile {
 console.log('osdasdasdasdadsi')
 
 Dashboard.showMenu()
-Dashboard.Userlogged()
 
 const user = await Request.requestUser()
 
