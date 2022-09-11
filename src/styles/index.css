@@ -1,24 +1,24 @@
 /* ===== Scrollbar CSS ===== */
   /* Firefox */
-  * {
-    scrollbar-width: auto;
-    scrollbar-color: #bababa #ffffff;
-  }
+    * {
+        scrollbar-width: auto;
+        scrollbar-color: #bababa #ffffff;
+    }
 
-  /* Chrome, Edge, and Safari */
-  *::-webkit-scrollbar {
-    width: 13px;
-  }
+    /* Chrome, Edge, and Safari */
+    *::-webkit-scrollbar {
+        width: 13px;
+    }
 
-  *::-webkit-scrollbar-track {
-    background: #ffffff;
-  }
+    *::-webkit-scrollbar-track {
+        background: #ffffff;
+    }
 
-  *::-webkit-scrollbar-thumb {
-    background-color: #bababa;
-    border-radius: 10px;
-    border: 3px solid #ffffff;
-  }
+    *::-webkit-scrollbar-thumb {
+        background-color: #bababa;
+        border-radius: 10px;
+        border: 3px solid #ffffff;
+    }
 
 
 body {
@@ -259,6 +259,7 @@ a{
     }
 
     .man_work {
+        object-fit: cover;
         width: 40vw;
         height: 80vh;
         right: 20px;

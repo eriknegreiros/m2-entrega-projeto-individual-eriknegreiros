@@ -42,9 +42,11 @@ export class Dashboard {
         })
         const sector = document.querySelector('.sector')
         const profile = document.querySelector('.profile')
+        const worker = document.querySelector('.oficial')
 
         if (localStorage.getItem('is_admin') == 'false') {
             sector.classList.add('none')
+            worker.classList.add('none')
         } else if (localStorage.getItem('is_admin') == 'true') {
             profile.classList.add('none')
         }
@@ -158,12 +160,12 @@ class Department {
 
             divCompany.append(bgColor)
 
-            data.forEach((element, index) => {
+            data. splice(0,8).forEach((element, index) => {
                 const nameDepartment = document.createElement('p')
 
                 nameDepartment.classList.add('name_of_department')
 
-                nameDepartment.innerText = `${index + 1} - ${element.description}`
+                nameDepartment.innerText = `${index + 1} - ${element.name}`
 
                 bgColor.append(nameDepartment)
             })
@@ -208,7 +210,7 @@ class company {
 
             divCompany.append(bgColor)
 
-            data.forEach((element, index) => {
+            data.splice(0,8).forEach((element, index) => {
                 const nameCompany = document.createElement('p')
 
                 nameCompany.classList.add('name_of_company')
@@ -234,7 +236,6 @@ class company {
 
             divCompany.append(bgColor)
         }
-
     }
 }
 

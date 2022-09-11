@@ -2,6 +2,12 @@ import { Request } from "./models/api.js"
 
 class SignUp{
 
+    static Userlogged() {
+        if (localStorage.getItem('token')) {
+            window.location.replace('../pages/dashboard.html')
+        }
+    }
+
     static SignUpUser(){
 
         const SignUpBtn = document.querySelector('.signup_btn')
@@ -30,4 +36,5 @@ class SignUp{
     }
 }
 
+SignUp.Userlogged()
 SignUp.SignUpUser()

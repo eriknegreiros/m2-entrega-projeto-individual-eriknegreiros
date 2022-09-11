@@ -42,16 +42,16 @@ export class Dashboard {
         })
         const sector = document.querySelector('.sector')
         const profile = document.querySelector('.profile')
+        const worker = document.querySelector('.oficial')
 
         if (localStorage.getItem('is_admin') == 'false') {
             sector.classList.add('none')
+            worker.classList.add('none')
         } else if (localStorage.getItem('is_admin') == 'true') {
             profile.classList.add('none')
         }
     }
-
 }
-
 
 class Company {
     static renderCompany(data) {
@@ -61,11 +61,20 @@ class Company {
 
             allCardsCmpany.innerHTML = ''
 
+            const next = document.createElement('div')
+            const prev = document.createElement('div')
+            const pagination = document.createElement('div')
+
+            next.classList.add('swiper-button-next')
+            prev.classList.add('swiper-button-prev')
+            pagination.classList.add('swiper-pagination')
+
             data.forEach((element) => {
                 const bgCard = document.createElement('div')
                 const nameCompany = document.createElement('h1')
                 const hourCompany = document.createElement('p')
                 const activityCompany = document.createElement('p')
+                
 
 
                 bgCard.classList.add('bg_card_company')
@@ -86,69 +95,133 @@ class Company {
     }
 
     static searchCompany() {
-        const btnSearch = document.querySelector('.btn_search_company')
 
-        btnSearch.addEventListener('click', async (event) => {
-            event.preventDefault()
+        if (localStorage.getItem('is_admin') == 'true') {
+            const btnSearch = document.querySelector('.btn_search_company')
 
-            const input = document.querySelector('.input_company')
+            btnSearch.addEventListener('click', async (event) => {
+                event.preventDefault()
 
-            const allCards = await Request.requestCompanyHomePage()
+                const input = document.querySelector('.input_company')
 
-            const pesquisar = input.value.toLowerCase()
+                const allCards = await Request.requestCompanyHomePage()
 
-            const filtered = allCards.filter(element =>
-                element.name.toLowerCase().includes(pesquisar) ||
-                element.sectors.description.toLowerCase().includes(pesquisar)
-            )
-            this.renderCompany(filtered)
-            input.value = ''
-        })
+                const pesquisar = input.value.toLowerCase()
+
+                const filtered = allCards.filter(element =>
+                    element.name.toLowerCase().includes(pesquisar) ||
+                    element.sectors.description.toLowerCase().includes(pesquisar)
+                )
+                this.renderCompany(filtered)
+                input.value = ''
+            })
+        }
+
     }
 
     static async createCompany() {
-        const btnCreate = document.querySelector('.create_company_btn')
-        const modal = document.querySelector('.create_modal')
 
-        btnCreate.addEventListener('click', () => {
-            modal.classList.remove('close_menu')
-        })
+        if (localStorage.getItem('is_admin') == 'true') {
+            const btnCreate = document.querySelector('.create_company_btn')
+            const sectors = await Request.requestSector()
 
-        const closeModal = document.querySelector('.closed_btn')
-        closeModal.addEventListener('click', () => {
-            modal.classList.add('close_menu')
-        })
+            btnCreate.addEventListener('click', async (event) => {
+                event.preventDefault()
+
+                const body = document.querySelector('.body')
+
+                const createModal = document.createElement('div')
+                const modal = document.createElement('div')
+                const divTitleModal = document.createElement('div')
+                const TitleModal = document.createElement('h1')
+                const closedBtn = document.createElement('p')
+                const divInput = document.createElement('div')
+                const inputName = document.createElement('input')
+                const inputHour = document.createElement('input')
+                const inputdescr = document.createElement('input')
+
+                const select = document.createElement('select')
+                const btnSend = document.createElement('button')
+
+                createModal.classList.add('create_modal')
+                modal.classList.add('modal')
+                divTitleModal.classList.add('div_title_modal')
+                TitleModal.classList.add('title_modal')
+                closedBtn.classList.add('closed_btn')
+                divInput.classList.add('div_input')
+                inputName.classList.add('input_create', 'name_comp')
+                inputHour.classList.add('input_create', 'hour_comp')
+                inputdescr.classList.add('input_create', 'description_comp')
+                select.classList.add('select_value')
+                btnSend.classList.add('btn', 'btn_send')
 
 
-        const btnSend = document.querySelector('.btn_send')
+                TitleModal.innerText = 'Cadastrar Empresa'
+                closedBtn.innerText = 'X'
+                inputName.placeholder = 'Nome da Empresa'
+                inputHour.type = 'Time'
+                inputdescr.placeholder = 'Descrição da Empresa'
+                btnSend.innerText = 'Cadastrar'
 
-        btnSend.addEventListener('click', async (event) => {
-            event.preventDefault()
+                sectors.forEach((element) => {
+                    const option = document.createElement('option')
+                    option.value = element.uuid
+                    option.innerText = element.description
 
-            const name = document.querySelector('.name_comp')
-            const hour = document.querySelector('.hour_comp')
-            const description = document.querySelector('.description_comp')
+                    select.append(option)
+                })
 
-            const select = document.getElementById('valores')
 
-            console.log(name.value)
-            console.log(hour.value)
-            console.log(description.value)
-            console.log(select.value)
+                closedBtn.addEventListener('click', (event) => {
+                    event.preventDefault()
+                    createModal.classList.toggle('close_menu')
+                })
 
-            const data = {
-                name: name.value,
-                opening_hours: hour.value,
-                description: description.value,
-                sector_uuid: select.value
-            }
-            
-            await Request.requestCreateCompany(data)
 
-        })
+                btnSend.addEventListener('click', async (event) => {
+                    event.preventDefault()
+
+                    const data = {
+                        name: inputName.value,
+                        opening_hours: inputHour.value,
+                        description: inputdescr.value,
+                        sector_uuid: select.options[select.selectedIndex].value
+                    }
+                    await Request.requestCreateCompany(data)
+                    const enterprise = await Request.requestCompanyHomePage()
+                    
+                    Company.renderCompany(enterprise)
+                    createModal.classList.toggle('close_menu')
+                })
+               
+                divInput.append(inputName, inputHour, inputdescr, select, btnSend)
+                divTitleModal.append(TitleModal, closedBtn)
+                modal.append(divTitleModal, divInput)
+                createModal.append(modal)
+                body.append(createModal)
+            })
+        }
+
 
     }
 
+    static swipper() {
+        var swiper = new Swiper(".slide_content", {
+            slidesPerView: 3,
+            spaceBetween: 30,
+            slidesPerGroup: 1,
+            loop: true,
+            loopFillGroupWithBlank: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    }
 
 }
 
@@ -156,8 +229,9 @@ class Company {
 
 Dashboard.Userlogged()
 Dashboard.showMenu()
-
 const enterprise = await Request.requestCompanyHomePage()
 Company.renderCompany(enterprise)
+
+Company.swipper
 Company.searchCompany()
 Company.createCompany()
