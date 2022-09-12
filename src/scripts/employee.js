@@ -14,7 +14,7 @@ export class Dashboard {
         const logout = document.querySelector('.btn_logout')
         logout.addEventListener("click", () => {
             localStorage.clear()
-            window.location.replace('../../../index.html')
+            window.location.replace('../../index.html')
         })
 
         const asideFull = document.querySelector('.div_aside_full')
