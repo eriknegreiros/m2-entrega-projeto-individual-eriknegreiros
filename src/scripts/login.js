@@ -2,6 +2,12 @@ import { Request } from "./models/api.js"
 
 class Login {
 
+    static Userlogged() {
+        if (localStorage.getItem('token')) {
+            window.location.replace('../pages/dashboard.html')
+        }
+    }
+
     static loginUser(){
         const entrarBtn = document.querySelector('.entrar_btn')
 
@@ -22,5 +28,5 @@ class Login {
         })
     }
 }
-
+Login.Userlogged()
 Login.loginUser()

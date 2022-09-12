@@ -1,10 +1,43 @@
+* {
+    scrollbar-width: auto;
+    scrollbar-color: #bababa #ffffff;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 13px;
+}
+
+
+
+*::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #bababa;
+    border-radius: 10px;
+    border: 3px solid #ffffff;
+}
+
+.toast {
+    font-family: var(--font);
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    color: var(--white);
+}
+
+
 .flex {
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
 }
 
 
-a{
+a {
     text-decoration: none !important;
     color: white !important;
 }
@@ -115,124 +148,130 @@ a{
     transform-origin: top;
 }
 
-.flex_dash {
-    width: 100vw;
+
+
+.section_all_employee {
     display: flex;
+    align-items: center;
     flex-direction: column;
-    gap: 50px;
-    animation: growDown 400ms ease-in-out forwards;
-    transform-origin: top;
+    justify-content: center;
+    width: 80vw;
 }
 
-main {
+.div_btn_employee {
     display: flex;
-    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.div_input_employee {
+    display: flex;
+    align-items: center;
     margin-top: 30px;
+    gap: 10px;
 }
 
-.div_welcome {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(230, 230, 230);
-    width: 90vw;
-    border-radius: 20px;
 
-}
-
-.div_text_dash {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.text_h2 {
+.btn2 {
+    width: 12vw;
+    height: 45px;
+    border-radius: 8px;
+    border: 2px solid var(--blue-color-3);
+    color: var(--blue-color-2);
     font-family: var(--font);
+    font-weight: 600;
+    background-color: white;
     text-align: center;
-    margin-top: 10px;
-    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.input_employee {
+    width: 200px;
+    height: 30px;
+    border-radius: 8px;
+    text-align: left;
+    padding-left: 8px;
+    border: 2px solid var(--blue-color-3);
+    color: var(--blue-color-2);
+    font-family: var(--font);
+    font-weight: 600;
+}
+
+.title_all_employee{
+    font-family: var(--font);
+    font-size: 2rem;
     font-weight: bold;
-}
-
-.text_p {
-    font-family: var(--font);
+    margin-top: 15px;
     text-align: center;
-    font-size: 1rem;
 }
 
-.img_dash {
-    width: 270px;
-    height: 200px;
-    animation: growDown 400ms ease-in-out forwards;
-    transform-origin: top;
-}
-
-.div_company {
-    margin-top: 30px;
+.all_cards_employee {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    margin-top: 15px;
     gap: 20px;
+    width: 100vw;
+    overflow: scroll;
+    margin-bottom: 30px;
+    transition: all .6s ease-in-out;
+    -webkit-transition: all .6s ease-in-out;
+    scroll-behavior: smooth;
 }
 
-.bg_color {
+
+.bg_card_employee {
+    background-color: rgb(230, 230, 230);
+    margin: 10px;
+    padding: 50px;
+    height: 20px;
+    border-radius: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: rgb(230, 230, 230);
-    width: 90vw;
-    height: 70vh;
+    gap: 10px;
     border-radius: 20px;
-    gap: 5px;
+
+
 }
 
-
-.name_of_title{
-    margin: 10px;
+.name_employee {
     font-family: var(--font);
-    font-size: 1.3rem;
-    text-align: center;
     font-weight: bold;
+    text-align: center;
+    border-bottom: 2px solid rgba(3, 46, 126, 1);
 }
 
-
-.name_of_sector{
+.level_professional {
     font-family: var(--font);
-    font-size: 1rem;
     text-align: center;
 }
 
-.title_department{
-    margin: 10px;
+.kind_of_work {
     font-family: var(--font);
-    font-size: 1.3rem;
     text-align: center;
+}
+
+.title_all_employee_off_company{
+    font-family: var(--font);
+    font-size: 2rem;
     font-weight: bold;
-}
-
-.name_of_department{
-    font-family: var(--font);
-    font-size: 1rem;
     text-align: center;
 }
 
-.title_company{
-    margin: 10px;
-    font-family: var(--font);
-    font-size: 1.3rem;
-    text-align: center;
-    font-weight: bold;
-}
-
-.name_of_company{
-    font-family: var(--font);
-    font-size: 1rem;
-    text-align: center;
+.all_cards_employees_off_company{
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    gap: 20px;
+    width: 100vw;
+    overflow: scroll;
+    margin-bottom: 30px;
+    transition: all .6s ease-in-out;
+    -webkit-transition: all .6s ease-in-out;
+    scroll-behavior: smooth;
 }
 
 
@@ -253,7 +292,22 @@ main {
     }
 }
 
+
+
 @media(min-width:768px) {
+    .flex {
+        position: fixed;
+    }
+
+
+    .toast {
+        font-family: var(--font);
+        width: 20%;
+        height: 50px;
+        text-align: center;
+        color: var(--white);
+    }
+
     .div_aside_full {
         width: 250px;
         align-items: center;
@@ -289,47 +343,56 @@ main {
     }
 
     .flex {
-        display: flex;
+        justify-content: initial;
+        align-items: initial;
+        flex-direction: row;
+        position: fixed;
+
+    }
+
+
+    .section_all_employee {
+        position: relative;
+    }
+
+    .div_btn_employee {
         flex-direction: row;
     }
 
-    .div_welcome {
-        flex-direction: row;
-        width: 70vw;
-        height: 35vh;
-        gap: 10px;
+    .input_employee {
+        width: 300px;
+
     }
 
-
-    .img_dash {
-        width: 260px;
-        height: 250px;
+    .items {
+        background-color: #bababa;
+        width: 250px;
     }
 
-    .div_company {
-        display: flex;
-        flex-direction: row;
-        gap: 20px;
+    .bg_card_employee {
+        width: 10vw;
+        margin: 10px;
     }
 
-    .bg_color {
-        width: 22vw;
-        height: 42vh;
+    .all_cards_employee {
+        flex-wrap: wrap;
+        overflow-y: scroll;
+        flex-direction: column;
+        width: 80vw;
+        height: 157px;
+        align-items: center;
+        justify-content: center;
+
     }
 
-
-    .text_h2{
-        font-size: 2rem;
-        margin-bottom: 10px;
+    .all_cards_employees_off_company{
+        flex-wrap: wrap;
+        overflow-y: scroll;
+        flex-direction: column;
+        width: 80vw;
+        height: 157px;
+        align-items: center;
+        justify-content: center;
     }
-    .text_p{
-        font-size: 1.3rem;
-    }
-
-    .flex_dash{
-        gap: 30px;
-    }
-
-
 
 }
