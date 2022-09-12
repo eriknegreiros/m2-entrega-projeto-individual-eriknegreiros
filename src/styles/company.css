@@ -196,6 +196,9 @@ a {
     gap: 20px;
     overflow: auto;
     margin-bottom: 30px;   
+    transition: all .6s ease-in-out;
+ -webkit-transition: all .6s ease-in-out;
+    scroll-behavior: smooth;
 }
 
 .bg_card_company {
@@ -254,10 +257,11 @@ a {
 
 .modal {
     background-color: white;
-    height: 300px;
+    min-height: 100px;
     width: 90vw;
     border-radius: 20px;
     align-items: center;
+    justify-content: center;
 }
 
 

@@ -61,14 +61,7 @@ class Company {
 
             allCardsCmpany.innerHTML = ''
 
-            const next = document.createElement('div')
-            const prev = document.createElement('div')
-            const pagination = document.createElement('div')
-
-            next.classList.add('swiper-button-next')
-            prev.classList.add('swiper-button-prev')
-            pagination.classList.add('swiper-pagination')
-
+            
             data.forEach((element) => {
                 const bgCard = document.createElement('div')
                 const nameCompany = document.createElement('h1')
@@ -124,11 +117,11 @@ class Company {
         if (localStorage.getItem('is_admin') == 'true') {
             const btnCreate = document.querySelector('.create_company_btn')
             const sectors = await Request.requestSector()
+            const body = document.querySelector('body')
 
             btnCreate.addEventListener('click', async (event) => {
                 event.preventDefault()
 
-                const body = document.querySelector('.body')
 
                 const createModal = document.createElement('div')
                 const modal = document.createElement('div')
@@ -205,23 +198,6 @@ class Company {
 
     }
 
-    static swipper() {
-        var swiper = new Swiper(".slide_content", {
-            slidesPerView: 3,
-            spaceBetween: 30,
-            slidesPerGroup: 1,
-            loop: true,
-            loopFillGroupWithBlank: true,
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-        });
-    }
 
 }
 

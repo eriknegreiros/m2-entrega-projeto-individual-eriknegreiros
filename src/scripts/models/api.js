@@ -1,18 +1,6 @@
 import {
-    homepageList,
-    loginAndRegister,
-    dashboard,
-    profile,
-    sector,
-    department,
-    createCompany,
-    departmentList,
-    departmentCompany,
-    createDepartment,
-    editDepartment,
-    deleteDepartment,
-    departmentOfCompany,
-    allEmployee
+    instanceA,
+    instanceB
 } from "./axios.js"
 
 import {
@@ -28,7 +16,7 @@ import {
 export class Request {
 
     static async requestCompanyHomePage() {
-        const base = await homepageList
+        const base = await instanceA
             .get(`/companies`)
             .then(res => res.data.reverse())
             .catch(err => console.log(err))
@@ -36,7 +24,7 @@ export class Request {
     }
 
     static async requestFilterCards(sector) {
-        const base = await homepageList
+        const base = await instanceA
             .get(`/companies/${sector}`)
             .then(res => res.data)
             .catch(err => console.log(err))
@@ -44,7 +32,7 @@ export class Request {
     }
 
     static async requestLogin(body) {
-        const base = await loginAndRegister
+        const base = await instanceB
             .post(`/auth/login`, body)
             .then((res) => {
                 localStorage.setItem('token', res.data.token)
@@ -52,7 +40,7 @@ export class Request {
                 localStorage.setItem('uuid', res.data.uuid)
                 Toast.create('Login Realizado com sucesso', "#00992e")
                 setTimeout(() => {
-                    window.location.replace("../../../src/pages/dashboard.html")
+                    window.location.replace("./src/pages/dashboard.html")
                 }, 1000)
                 return res.data
             })
@@ -64,12 +52,12 @@ export class Request {
     }
 
     static async requestSignUp(body) {
-        const base = await loginAndRegister
+        const base = await instanceB
             .post(`/auth/register/user`, body)
             .then((res) => {
                 Toast.create('Conta criada com Sucesso', "#00992e")
                 setTimeout(() => {
-                    window.location.replace("../../../src/pages/login.html")
+                    window.location.replace("./src/pages/login.html")
                 }, 1000)
                 return res
             })
@@ -81,7 +69,7 @@ export class Request {
     }
 
     static async requestUser() {
-        const base = await dashboard
+        const base = await instanceB
             .get(`/users/profile`)
             .then(res => res.data)
             .catch(err => console.log(err))
@@ -89,12 +77,12 @@ export class Request {
     }
 
     static async requestChangeProfile(body) {
-        const base = await profile
+        const base = await instanceB
             .patch(`/users`, body)
             .then((res) => {
                 Toast.create('Dados Atualizados com Sucesso', "#00992e")
                 setTimeout(() => {
-                    window.location.replace('../../../src/pages/dashboard.html')
+                    window.location.replace('./src/pages/dashboard.html')
                 }, 3000)
                 console.log(res)
             })
@@ -103,7 +91,7 @@ export class Request {
     }
 
     static async requestSector() {
-        const base = await sector
+        const base = await instanceB
             .get(`/sectors`)
             .then(res => res.data)
             .catch(err => console.log(err))
@@ -111,7 +99,7 @@ export class Request {
     }
 
     static async requestDepartment() {
-        const base = await department
+        const base = await instanceB
             .get(`/departments`)
             .then(res => res.data)
             .catch(err => console.log(err))
@@ -119,7 +107,7 @@ export class Request {
     }
 
     static async requestCreateCompany(body) {
-        const base = await createCompany
+        const base = await instanceB
             .post(`/companies`, body)
             .then((res => {
                 Toast2.create('Empresa cadastrada com Sucesso', "#00992e")
@@ -133,14 +121,15 @@ export class Request {
     }
 
     static async requestDepartment() {
-        const base = await departmentList
+        const base = await instanceB
             .get(`/departments`)
             .then(res => res.data.reverse())
             .catch(err => console.log(err))
         return base
     }
+
     static async requestDepartmentCompany(id) {
-        const base = await departmentCompany
+        const base = await instanceB
             .get(`/${id}`)
             .then(res => res.data)
             .catch(err => console.log(err))
@@ -149,7 +138,7 @@ export class Request {
 
 
     static async requestCreateDepartment(body) {
-        const base = await createDepartment
+        const base = await instanceB
             .post(`/departments`, body)
             .then((res) => {
                 Toast.create('Departamento Criado com Sucesso', "#00992e")
@@ -163,7 +152,7 @@ export class Request {
     }
 
     static async requestEditDepartment(id, body) {
-        const base = await editDepartment
+        const base = await instanceB
             .patch(`/${id}`, body)
             .then((res) => {
                 Toast.create('Departamento Atualizado com Sucesso', "#00992e")
@@ -177,7 +166,7 @@ export class Request {
     }
 
     static async requestDeleteDepartment(id) {
-        const base = await deleteDepartment
+        const base = await instanceB
             .delete(`/${id}`)
             .then((res) => {
                 Toast.create('Departamento Excluido com Sucesso', "#00992e")
@@ -191,7 +180,7 @@ export class Request {
     }
 
     static async requestSearchDepartment(id){
-        const base = await departmentOfCompany
+        const base = await instanceB
         .get(`/${id}`)
         .then(res => res.data)
         .catch(err => console.log(err))
@@ -199,10 +188,78 @@ export class Request {
     }
 
     static async requestAllEmployee(){
-        const base = await allEmployee
+        const base = await instanceB
         .get(`/users`)
         .then(res => res.data)
         .catch(err => console.log(err))
+        return base
+    }
+
+    static async requestAllEmplyeeOffJob(){
+        const base = await instanceB
+        .get(`/admin/out_of_work`)
+        .then(res => res.data)
+        .catch(err => console.log(err))
+        return base
+    }
+
+    static async requestHireEmployee(body){
+        const base = await instanceB
+        .patch(`/departments/hire/`, body)
+        .then((res) =>{
+           Toast.create('Usuário Contratado com sucesso', "#00992e" )
+            return res.data
+        })
+        .catch((err) =>{
+            Toast.create('Usuário Não contratado', "#d90a02")
+                console.log(err)
+        })
+            
+        return base
+    }
+
+    static async requestEditEmployee(id, body){
+        const base = await instanceB
+        .patch(`/admin/update_user/${id}`, body)
+        .then((res) =>{
+           Toast.create('Usuário Editado com sucesso', "#00992e" )
+            return res.data
+        })
+        .catch((err) =>{
+            Toast.create('Revise os campos', "#d90a02")
+                console.log(err)
+        })
+            
+        return base
+    }
+
+    static async requestDeleteEmployee(id){
+        const base = await instanceB
+        .delete(`/admin/delete_user/${id}`)
+        .then((res) =>{
+           Toast.create('Usuário Deletado com sucesso', "#00992e" )
+            return res.data
+        })
+        .catch((err) =>{
+            Toast.create('Erro ao deletar Funcionário', "#d90a02")
+                console.log(err)
+        })
+            
+        return base
+    }
+
+    static async requestDismissEmployee(id){
+        const base = await instanceB
+        .patch(`/departments/dismiss/${id}`)
+        .then((res) =>{
+           Toast.create('Usuário Demitido com sucesso', "#00992e" )
+            return res.data
+        })
+        .catch((err) =>{
+            Toast.create('Erro ao demitir Funcionário', "#d90a02")
+                console.log(err)
+        })
+            
         return base
     }
 }

@@ -7,11 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/components.css">
     <link rel="stylesheet" href="../styles/employee.css">
+    <link rel="stylesheet" href="../styles/company.css">
     <link rel="stylesheet" href="../styles/buttons.css">
     <link rel="shortcut icon" href="../assets/favicon.png">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-    <link rel="stylesheet" href="../styles/swiper-bundle.min.css">
+
     <title>Negreiros ERP</title>
 </head>
 
@@ -43,9 +44,10 @@
 
         <section class="section_all_employee">
             <div class="div_btn_employee">
-                <button class="btn2">Contratar Funcionario</button>
-                <button class="btn2">Editar Funcionario</button>
-                <button class="btn2">Deletar Funcionario</button>
+                <button class="btn2 hireEmployeeBtn">Contratar Funcionário</button>
+                <button class="btn2 editBtn">Editar Funcionário</button>
+                <button class="btn2 dismissBtn">Demitir Funcionario</button>
+                <button class="btn2 deleteBtn">Deletar Funcionário</button>
             </div>
 
             <div class="div_input_employee">
@@ -53,25 +55,23 @@
                 <button class="btn">Pesquisar</button>
             </div>
 
+            <h2 class="title_all_employee">Todos os Funcionarios</h2>
+            <div class="all_cards_employee">
+            </div>
 
-            <div class="slide_container swiper">
-                <div class="slide_content">
-                    <div class="card_wrapper swiper-wrapper">
-                        
-                    </div>
-                </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-pagination"></div>
+            <h2 class="title_all_employee_off_company">Funcionarios Sem Departamento</h2>
+            <div class="all_cards_employees_off_company">
             </div>
 
             
 
-            
 
 
 
-            
+
+
+
+
 
         </section>
     </div>
@@ -79,7 +79,6 @@
 
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script type="module" src="../scripts/swiper-bundle.min.js"></script>
     <script type="module" src="../scripts/employee.js"></script>
 </body>
 

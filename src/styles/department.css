@@ -18,7 +18,7 @@
     border: 3px solid #ffffff;
 }
 
-.toast{
+.toast {
     font-family: var(--font);
     width: 100%;
     height: 50px;
@@ -27,13 +27,17 @@
 }
 
 
+.none{
+    display: none;
+}
+
 .flex {
     display: flex;
     flex-direction: column;
 }
 
 
-a{
+a {
     text-decoration: none !important;
     color: white !important;
 }
@@ -144,7 +148,7 @@ a{
     transform-origin: top;
 }
 
-.div_department_btn{
+.div_department_btn {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -155,7 +159,7 @@ a{
     position: relative;
 }
 
-.btn_create_department{
+.btn_create_department {
     width: 200px;
     border-radius: 20px;
     border-radius: 8px;
@@ -164,11 +168,11 @@ a{
     font-family: var(--font);
     font-weight: 600;
     background-color: white;
-    text-align: center; 
+    text-align: center;
     cursor: pointer;
 }
 
-.btn_edit_department{
+.btn_edit_department {
     width: 200px;
     border-radius: 8px;
     border: 2px solid var(--blue-color-3);
@@ -176,11 +180,11 @@ a{
     font-family: var(--font);
     font-weight: 600;
     background-color: white;
-    text-align: center; 
+    text-align: center;
     cursor: pointer;
 }
 
-.btn_delete_department{
+.btn_delete_department {
     width: 200px;
     border-radius: 8px;
     border: 2px solid var(--blue-color-3);
@@ -188,11 +192,11 @@ a{
     font-family: var(--font);
     font-weight: 600;
     background-color: white;
-    text-align: center; 
+    text-align: center;
     cursor: pointer;
 }
 
-.div_department_input{
+.div_department_input {
     margin-top: 30px;
     display: flex;
     align-items: center;
@@ -200,7 +204,7 @@ a{
     gap: 5px;
 }
 
-.input_department{
+.input_department {
     width: 65vw;
     border-radius: 8px;
     border: 2px solid var(--blue-color-3);
@@ -208,7 +212,7 @@ a{
     font-family: var(--font);
     font-weight: 600;
     background-color: white;
-    text-align: left; 
+    text-align: left;
     cursor: pointer;
     padding-left: 8px;
     height: 25px;
@@ -221,9 +225,9 @@ a{
     margin-top: 30px;
     gap: 20px;
     overflow: auto;
-    margin-bottom: 30px; 
-    scroll-snap-type: x mandatory;  
-    -webkit-overflow-scrolling: touch;
+    margin-bottom: 30px;
+    transition: all .6s ease-in-out;
+    -webkit-transition: all .6s ease-in-out;
     scroll-behavior: smooth;
 }
 
@@ -258,7 +262,7 @@ a{
 
 
 
-.modalDepartment{
+.modalDepartment {
     display: flex;
     position: fixed;
     bottom: 0;
@@ -278,32 +282,32 @@ a{
 
 .bg_modal {
     background-color: rgb(255, 255, 255);
-    height: 300px;
+    min-height: 100px;
     width: 90vw;
-    border-radius: 20px; 
+    border-radius: 20px;
 }
 
 
-.div_modal_up{
+.div_modal_up {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin: 20px;
 }
 
-.title_department_modal{
+.title_department_modal {
     font-family: var(--font);
     font-weight: 600;
 }
 
 
-.close_btn_department{
+.close_btn_department {
     font-family: var(--font);
     font-size: 1.2rem;
     cursor: pointer;
 }
 
-.input_department_modal{
+.input_department_modal {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -313,7 +317,7 @@ a{
 }
 
 
-.input_department_create{
+.input_department_create {
     height: 20px;
     width: 240px;
     border-radius: 20px;
@@ -322,7 +326,7 @@ a{
     font-family: var(--font);
 }
 
-.btn_create_modal{
+.btn_create_modal {
     width: 200px;
     border-radius: 8px;
     border: 2px solid var(--blue-color-3);
@@ -330,15 +334,15 @@ a{
     font-family: var(--font);
     font-weight: 600;
     background-color: white;
-    text-align: center; 
+    text-align: center;
     cursor: pointer;
 }
 
-.close_modal{
+.close_modal {
     display: none;
 }
 
-select{
+select {
     height: 27px;
     width: 250px;
     border-radius: 20px;
@@ -348,13 +352,13 @@ select{
 }
 
 
-.option{
+.option {
     font-family: var(--font);
 }
 
 
 
-.modal_company{
+.modal_company {
     display: flex;
     position: fixed;
     bottom: 0;
@@ -369,29 +373,29 @@ select{
     background-color: rgba(0, 0, 0, 0.4);
     animation: growDown 400ms ease-in-out forwards;
     transform-origin: top;
-   
+
 }
 
-.modal_complete_company{
+.modal_complete_company {
     width: 80vw;
-   height: 300px;
-   background-color: white;
-   border-radius: 20px;
+    height: 300px;
+    background-color: white;
+    border-radius: 20px;
 }
 
-.modal_up_company{
+.modal_up_company {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin: 20px;
 }
 
-.modal_up{
+.modal_up {
     display: flex;
     margin: 20px;
 }
 
-.div_company_render{
+.div_company_render {
     display: flex;
     align-items: center;
     overflow: scroll;
@@ -400,31 +404,31 @@ select{
     justify-content: center;
 }
 
-.div_company{
+.div_company {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    margin: 8px; 
+    margin: 8px;
 }
 
-.title_company{
+.title_company {
     font-family: var(--font);
     text-align: center;
     font-weight: bold;
 }
 
-.department_company{
+.department_company {
     font-family: var(--font);
     text-align: center;
 }
 
-.enterprise_title{
+.enterprise_title {
     font-family: var(--font);
     font-weight: bold;
 }
 
-.close_btn_modal_company{
+.close_btn_modal_company {
     font-family: var(--font);
 
     font-size: 1.2rem;
@@ -449,19 +453,19 @@ select{
 
 
 @media(min-width:768px) {
-   .flex{
-    position: fixed;
-   }
-   
+    .flex {
+        position: fixed;
+    }
 
-   .toast{
-    font-family: var(--font);
-    width: 20%;
-    height: 50px;
-    text-align: center;
-    color: var(--white);
-}
-   
+
+    .toast {
+        font-family: var(--font);
+        width: 20%;
+        height: 50px;
+        text-align: center;
+        color: var(--white);
+    }
+
     .div_aside_full {
         width: 250px;
         align-items: center;
@@ -501,35 +505,35 @@ select{
         flex-direction: row;
     }
 
-    .div_department_btn{
+    .div_department_btn {
         width: 80vw;
         gap: 20px;
         margin-top: 30px;
         flex-direction: row;
     }
 
-    
-    .btn_create_department{
-    width: 15vw;
-    height: 50px;
-}
 
-    .btn_edit_department{
-    width: 15vw;
-    height: 50px;
-}
+    .btn_create_department {
+        width: 15vw;
+        height: 50px;
+    }
 
-    .btn_delete_department{
-    width: 15vw;
-    height: 50px;
-}
+    .btn_edit_department {
+        width: 15vw;
+        height: 50px;
+    }
 
-.div_department_input{
-    position: relative;
-    top: 40px;
-}
+    .btn_delete_department {
+        width: 15vw;
+        height: 50px;
+    }
 
-    .input_department{
+    .div_department_input {
+        position: relative;
+        top: 40px;
+    }
+
+    .input_department {
         width: 40vw;
     }
 
@@ -540,7 +544,7 @@ select{
         position: relative;
         top: 90px;
         align-items: center;
-        
+
     }
 
     .bg_department_card {
@@ -549,13 +553,14 @@ select{
         margin-left: 4vw;
     }
 
-    .bg_modal{
-        width:400px;
+    .bg_modal {
+        width: 400px;
         position: relative;
         left: 8vw;
     }
-    .modal_complete_company{
-        width:400px;
+
+    .modal_complete_company {
+        width: 400px;
         position: relative;
         left: 8vw;
     }
