@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/components.css">
+    <link rel="stylesheet" href="../styles/company.css">
+    <link rel="stylesheet" href="../styles/buttons.css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="shortcut icon" href="../assets/favicon.png">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <title>Negreiros ERP</title>
+</head>
+
+<body>
+    <div class="flex">
+        <aside>
+            <div class="div_aside_full">
+                <div class="div_img_open">
+                    <a href="../pages/dashboard.html"> <img class="logo_negreiros" src="../assets/logoNegreiros.png" alt=""></a>
+                    <img class="menu_img " src="../assets/menu.png" alt="">
+                    <p class="close_menu none">X</p>
+                </div>
+
+                <div class="close_menu_div menu_order">
+                    <div class="div_aside_up ">
+                        <p class="menu_nav profile"> <a href="../pages/profile.html"> Perfil </a> </p>
+                        <p class="menu_nav sector"><a href="../pages/sectors.html">Setores</a></p>
+                        <p class="menu_nav">
+                            <a href="../pages/company.html">Empresas</a>
+                        </p>
+                        <p class="menu_nav"><a href="./department.html">Departamento</a></p>
+                        <p class="menu_nav oficial"><a href="../pages/employee.html">Funcionários</a></p>
+                    </div>
+
+                    <div class="div_aside_down ">
+                        <button class="btn_logout">Sair</button>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <section class="section_search ">
+            <div class="div_create_search ">
+                <button class="create_company_btn">Criar Empresa</button>
+                <input cl placeholder="Pesquise pela empresa ou pelo Setor" class="input_company"
+                    type="Pesquisa pela empresa ou pelo setor">
+                <button class="btn_search_company">Pesquisar</button>
+            </div>
+
+            <div class="all_cards_company">
+            </div>
+
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="../scripts/company.js"></script>
+</body>
+
+</html>

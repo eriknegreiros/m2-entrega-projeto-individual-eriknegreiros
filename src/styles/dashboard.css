@@ -1,0 +1,335 @@
+.flex {
+    display: flex;
+    flex-direction: column;
+}
+
+
+a{
+    text-decoration: none !important;
+    color: var(--white) !important;
+}
+
+.div_aside_full {
+    background: rgb(37, 37, 37);
+    background: linear-gradient(71deg, rgba(37, 37, 37, 1) 0%, rgba(3, 46, 126, 1) 100%);
+    width: 100vw;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    animation: growDown 400ms ease-in-out forwards;
+    transform-origin: top;
+}
+
+.div_img_open {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo_negreiros {
+    position: relative;
+    right: 8px;
+    bottom: 70px;
+    width: 250px;
+    height: 250px;
+}
+
+.menu_img {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    top: 30px;
+}
+
+.close_menu {
+    font-size: 2rem;
+    color: var(--white);
+    position: relative;
+    top: 30px;
+    right: 15px;
+    font-family: var(--font);
+
+}
+
+.close_menu_div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    bottom: 70px;
+}
+
+
+.div_aside_up {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+
+
+.menu_nav {
+    font-family: var(--font);
+    color: var(--white);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.div_aside_down {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 40px;
+    justify-content: center;
+}
+
+.btn_logout {
+    width: 80px;
+    height: 25px;
+    border-radius: 8px;
+    border: 2px solid var(--blue-color-3);
+    color: var(--blue-color-2);
+    font-family: var(--font);
+    font-weight: 600;
+    background-color: var(--white);
+    text-align: center;
+    cursor: pointer;
+
+}
+
+
+.none {
+    display: none;
+}
+
+.menu_order {
+    display: none;
+}
+
+.close_menu_div {
+    animation: growDown 400ms ease-in-out forwards;
+    transform-origin: top;
+}
+
+.flex_dash {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    animation: growDown 400ms ease-in-out forwards;
+    transform-origin: top;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.div_welcome {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(230, 230, 230);
+    width: 90vw;
+    border-radius: 20px;
+
+}
+
+.div_text_dash {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.text_h2 {
+    font-family: var(--font);
+    text-align: center;
+    margin-top: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.text_p {
+    font-family: var(--font);
+    text-align: center;
+    font-size: 1rem;
+}
+
+.img_dash {
+    width: 270px;
+    height: 200px;
+    animation: growDown 400ms ease-in-out forwards;
+    transform-origin: top;
+}
+
+.div_company {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.bg_color {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(230, 230, 230);
+    width: 90vw;
+    height: 70vh;
+    border-radius: 20px;
+    gap: 5px;
+}
+
+
+.name_of_title{
+    margin: 10px;
+    font-family: var(--font);
+    font-size: 1.3rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+.name_of_sector{
+    font-family: var(--font);
+    font-size: 1rem;
+    text-align: center;
+}
+
+.title_department{
+    margin: 10px;
+    font-family: var(--font);
+    font-size: 1.3rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.name_of_department{
+    font-family: var(--font);
+    font-size: 1rem;
+    text-align: center;
+}
+
+.title_company{
+    margin: 10px;
+    font-family: var(--font);
+    font-size: 1.3rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.name_of_company{
+    font-family: var(--font);
+    font-size: 1rem;
+    text-align: center;
+}
+
+
+
+@keyframes growDown {
+    0% {
+        opacity: 0;
+        transform: rotateX(-90deg);
+    }
+
+    50% {
+        transform: rotateX(-20deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: rotateX(0deg);
+    }
+}
+
+@media(min-width:768px) {
+    .div_aside_full {
+        width: 250px;
+        align-items: center;
+        height: 100vh !important;
+    }
+
+    .logo_negreiros {
+        right: 0px;
+    }
+
+    .menu_img {
+        display: none;
+    }
+
+    .div_aside_up {
+        position: relative;
+        bottom: 24vh;
+    }
+
+    .close_menu {
+        display: none;
+    }
+
+    .menu_order {
+        display: inline;
+    }
+
+    .close_menu_div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .flex {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .div_welcome {
+        flex-direction: row;
+        width: 70vw;
+        height: 35vh;
+        gap: 10px;
+    }
+
+
+    .img_dash {
+        width: 260px;
+        height: 250px;
+    }
+
+    .div_company {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .bg_color {
+        width: 22vw;
+        height: 42vh;
+    }
+
+
+    .text_h2{
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+    .text_p{
+        font-size: 1.3rem;
+    }
+
+    .flex_dash{
+        gap: 30px;
+    }
+
+
+
+}

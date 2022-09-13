@@ -1,0 +1,183 @@
+.full_painel {
+    display: flex;
+    flex-direction: column;
+}
+
+.upside_painel {
+    background: rgb(37, 37, 37);
+    background: linear-gradient(71deg, rgba(37, 37, 37, 1) 0%, rgba(3, 46, 126, 1) 100%);
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+a{
+    text-decoration: none;
+    color: var(--grey-color);
+}
+
+
+.toast{
+    font-family: var(--font);
+    width: 80%;
+    height: 20px;
+    text-align: center;
+    color: var(--white);
+}
+
+.img_logo {
+    position: relative;
+    bottom: 10px;
+    right: 10px;
+    width: 250px;
+    height: 250px;
+    cursor: pointer;
+}
+
+.info {
+    font-family: var(--font);
+    color: white;
+    position: relative;
+    bottom: 80px;
+    margin-left: 15px;
+}
+
+.down_painel {
+    display: flex;
+    flex-direction: column;
+    height: 70vh;
+    justify-content: center;
+}
+
+.text_login {
+    font-family: var(--font);
+    margin-left: 9vw;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--grey-color);
+}
+
+
+.bg_login {
+    display: flex;
+   flex-direction: column; 
+   color: var(--blue-color-2);
+}
+
+.div_input{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.input_login{
+    width: 80vw;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid var(--grey-color);
+    color: var(--blue-color-2);
+    font-family: var(--font);
+    padding-left: 8px;
+}
+
+
+.entrar_btn{
+    margin-top: 20px;
+    border: 1px solid var(--blue-color-3);
+    color: var(--grey-color);
+    width: 200px;
+    height: 25px;
+    border-radius: 8px;
+    font-family: var(--font);
+    cursor: pointer;
+}
+
+.text_signup{
+    font-family: var(--font);
+    font-size: 1.1rem;
+    color: var(--grey-color);
+    margin-top: 5px;
+}
+
+.btn_register{
+    border: 1px solid var(--grey-color);
+    background-color: white;
+    color: var(--grey-color);
+    width: 200px;
+    height: 25px;
+    border-radius: 8px;
+    font-family: var(--font);
+    cursor: pointer;
+}
+
+
+@media (min-width: 768px) {
+    .full_painel {
+        flex-direction: row;
+    }
+
+    .upside_painel {
+        width: 50vw;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .img_logo {
+        position: relative;
+        bottom: 10px;
+        width: 450px;
+        height: 450px;
+    }
+
+    .info {
+        text-align: center;
+        position: relative;
+        bottom: 110px;
+        font-size: 1.5rem;
+        margin: 30px;
+    }
+
+    .down_painel {
+
+        flex-direction: row;
+        width: 50vw;
+        height: 100vh;
+    }
+
+    
+.down_painel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.text_login {
+    margin-top: 50px;
+    margin-left: 0px;
+    position: relative;
+    right: 150px;
+}
+
+
+.bg_login {
+    display: flex;
+   flex-direction: column; 
+   color: var(--blue-color-2);
+
+}
+.div_input{ 
+    gap: 25px;
+}
+
+
+
+.input_login{
+    width: 350px;
+}
+}

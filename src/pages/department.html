@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/components.css">
+    <link rel="stylesheet" href="../styles/department.css">
+    <link rel="stylesheet" href="../styles/buttons.css">
+    <link rel="shortcut icon" href="../assets/favicon.png">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+
+    <title>Negreiros ERP</title>
+</head>
+
+<body>
+    <div class="flex">
+        <aside>
+            <div class="div_aside_full">
+                <div class="div_img_open">
+                    <a href="../pages/dashboard.html"> <img class="logo_negreiros" src="../assets/logoNegreiros.png" alt=""></a>
+                    <img class="menu_img " src="../assets/menu.png" alt="">
+                    <p class="close_menu none">X</p>
+                </div>
+
+                <div class="close_menu_div menu_order">
+                    <div class="div_aside_up ">
+                        <p class="menu_nav profile"> <a href="../pages/profile.html"> Perfil </a> </p>
+                        <p class="menu_nav sector"><a href="../pages/sectors.html">Setores</a></p>
+                        <p class="menu_nav "><a href="../pages/company.html">Empresas</a></p>
+                        <p class="menu_nav"><a href="../pages/department.html">Departamento</a></p>
+                        <p class="menu_nav employ   oficial"><a href="../pages/employee.html">Funcionários</a></p>
+                    </div>
+
+                    <div class="div_aside_down ">
+                        <button class="btn_logout">Sair</button>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <section class="sect ">
+            <div class="div_department_btn  ">
+                <button class="btn_create_department">Criar Departamento</button>
+                <button class="btn_edit_department">Editar Departamento</button>
+                <button class="btn_delete_department">Deletar Departamento</button>
+            </div>
+
+            <div class="div_department_input ">
+                <input class="input_department input_search_company_department" placeholder="Pesquise pela Empresa" type="text">
+                <button class="btn btn_departament_company">Pesquisar</button>
+            </div>
+
+
+            <div class="all_departments_cards">
+            </div>
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+        </section>
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script type="module" src="../scripts/department.js"></script>
+</body>
+
+</html>

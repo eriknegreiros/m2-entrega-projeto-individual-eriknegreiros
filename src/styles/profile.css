@@ -1,0 +1,260 @@
+.flex {
+    display: flex;
+    flex-direction: column;
+}
+
+
+a {
+    text-decoration: none !important;
+    color: var(--white) !important;
+}
+
+.toast{
+    font-family: var(--font);
+    width: 80%;
+    height: 20px;
+    text-align: center;
+    color: var(--white);
+}
+
+.div_aside_full {
+    background: rgb(37, 37, 37);
+    background: linear-gradient(71deg, rgba(37, 37, 37, 1) 0%, rgba(3, 46, 126, 1) 100%);
+    width: 100vw;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    animation: growDown 400ms ease-in-out forwards;
+    transform-origin: top;
+}
+
+.div_img_open {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo_negreiros {
+    position: relative;
+    right: 8px;
+    bottom: 70px;
+    width: 250px;
+    height: 250px;
+}
+
+.menu_img {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    top: 30px;
+}
+
+.close_menu {
+    font-size: 2rem;
+    color: var(--white);
+    position: relative;
+    top: 30px;
+    right: 15px;
+    font-family: var(--font);
+}
+
+.close_menu_div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    bottom: 90px;
+}
+
+.div_aside_up {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    gap: 40px;
+}
+
+
+
+.menu_nav {
+    font-family: var(--font);
+    color: var(--white);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.div_aside_down {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 40px;
+    justify-content: center;
+}
+
+.btn_logout {
+    width: 80px;
+    height: 25px;
+    border-radius: 8px;
+    border: 2px solid var(--blue-color-3);
+    color: var(--blue-color-2);
+    font-family: var(--font);
+    font-weight: 600;
+    background-color: var(--white);
+    text-align: center;
+    cursor: pointer;
+
+}
+
+.none {
+    display: none;
+}
+
+.menu_order {
+    display: none;
+}
+
+.close_menu_div {
+    animation: growDown 400ms ease-in-out forwards;
+    transform-origin: top;
+}
+
+.section_change_profile{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: growDown 400ms ease-in-out forwards;
+    transform-origin: top;
+}
+
+.title_change{
+    margin-top: 10px;
+    font-size: 2rem;
+    font-family: var(--font);
+    text-align: center;
+
+}
+
+
+.div_bg_profile{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color:rgb(230, 230, 230);
+    width: 95vw;
+    height: 66vh;
+    border-radius: 20px;
+}
+
+
+.profile_img{
+    margin-top: 15px;
+    width: 100px;
+    height: 100px;
+}
+
+.div_input_profile{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.input_profile{
+    width: 250px;
+    height: 30px;
+    border-radius: 20px;
+    padding-left: 8px;
+    border: 1px solid var(--blue-color-5);
+    font-family: var(--font);
+}
+
+.btn_atualizar{
+    margin-top: 20px;
+    width: 130px;
+    height: 25px;
+    border-radius: 8px;
+    border: 2px solid var(--blue-color-3);
+    color: var(--blue-color-2);
+    font-family: var(--font);
+    font-weight: 600;
+    background-color: var(--white);
+    text-align: center;
+    cursor: pointer;
+}
+
+
+@keyframes growDown {
+    0% {
+        opacity: 0;
+        transform: rotateX(-90deg);
+    }
+
+    50% {
+        transform: rotateX(-20deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: rotateX(0deg);
+    }
+}
+
+@media(min-width:768px) {
+    .flex{
+        flex-direction: row;
+    }
+    
+    
+    .div_aside_full {
+        width: 250px;
+        align-items: center;
+        height: 100vh !important;
+    }
+
+    .logo_negreiros {
+        right: 0px;
+    }
+
+    .menu_img {
+        display: none;
+    }
+
+    .div_aside_up {
+        position: relative;
+        bottom: 24vh;
+
+    }
+
+    .close_menu {
+        display: none;
+    }
+
+    .menu_order {
+        display: inline;
+    }
+
+    .close_menu_div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .div_bg_profile{
+        width: 500px;
+        height: 350px;
+    }
+
+    .title_change{
+        position: relative;
+    bottom: 20px;
+    }
+}

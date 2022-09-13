@@ -1,0 +1,447 @@
+* {
+    scrollbar-width: auto;
+    scrollbar-color: #bababa #ffffff;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 13px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #bababa;
+    border-radius: 10px;
+    border: 3px solid #ffffff;
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+}
+
+
+a {
+    text-decoration: none !important;
+    color: var(--white) !important;
+}
+
+.div_aside_full {
+    background: rgb(37, 37, 37);
+    background: linear-gradient(71deg, rgba(37, 37, 37, 1) 0%, rgba(3, 46, 126, 1) 100%);
+    width: 100vw;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    animation: growDown 400ms ease-in-out forwards;
+    transform-origin: top;
+}
+
+.div_img_open {
+    display: flex;
+    justify-content: space-between;
+   height: 120px;
+}
+
+.logo_negreiros {
+    position: relative;
+    right: 8px;
+    bottom: 70px;
+    width: 250px;
+    height: 250px;
+}
+
+.menu_img {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    top: 30px;
+}
+
+.close_menu {
+    font-size: 2rem;
+    color: var(--white);
+    position: relative;
+    top: 30px;
+    right: 15px;
+    font-family: var(--font);
+
+}
+
+.close_menu_div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    bottom: 70px;
+}
+
+
+.div_aside_up {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+
+
+.menu_nav {
+    font-family: var(--font);
+    color: var(--white);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.div_aside_down {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 40px;
+    justify-content: center;
+}
+
+.btn_logout {
+    width: 80px;
+    height: 25px;
+    border-radius: 8px;
+    border: 2px solid var(--blue-color-3);
+    color: var(--blue-color-2);
+    font-family: var(--font);
+    font-weight: 600;
+    background-color: var(--white);
+    text-align: center;
+    cursor: pointer;
+
+}
+
+
+.none {
+    display: none;
+}
+
+.menu_order {
+    display: none;
+}
+
+.close_menu_div {
+    animation: growDown 400ms ease-in-out forwards;
+    transform-origin: top;
+}
+
+
+
+.div_create_search {
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+.create_company_btn {
+    width: 120px;
+    height: 25px;
+    border-radius: 8px;
+    border: 2px solid var(--blue-color-3);
+    color: var(--blue-color-2);
+    font-family: var(--font);
+    font-weight: 600;
+    background-color: var(--white);
+    text-align: center;
+    text-align: center;
+    cursor: pointer;
+}
+
+.input_company {
+    width: 90vw;
+    height: 30px;
+    border-radius: 8px;
+    text-align: left;
+    padding-left: 8px;
+    border: 2px solid var(--blue-color-3);
+    color: var(--blue-color-2);
+    font-family: var(--font);
+    font-weight: 600;
+}
+
+.btn_search_company {
+    width: 90px;
+    height: 30px;
+    border-radius: 8px;
+    border: 2px solid var(--blue-color-3);
+    color: var(--blue-color-2);
+    font-family: var(--font);
+    font-weight: 600;
+    background-color: var(--white);
+    text-align: center;
+    cursor: pointer;
+}
+
+
+
+.all_cards_company {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    gap: 20px;
+    overflow: auto;
+    margin-bottom: 30px;   
+    transition: all .6s ease-in-out;
+ -webkit-transition: all .6s ease-in-out;
+    scroll-behavior: smooth;
+}
+
+.bg_card_company {
+    background-color: rgb(230, 230, 230);
+    width: 20px;
+    margin: 10px;
+    padding: 50px;
+    height: 80px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.name_company {
+    font-family: var(--font);
+    font-weight: bold;
+    border-bottom: 2px solid var(--blue-color-4);
+    font-size: 1rem;
+    text-align: center;
+}
+
+.hour_company {
+    font-family: var(--font);
+    font-weight: 500;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.activity_company {
+    font-family: var(--font);
+    font-weight: 500;
+    font-size: 1rem;
+    text-align: center;
+}
+
+
+.create_modal {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 9999;
+    width: 100vw;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    animation: growDown 400ms ease-in-out forwards;
+    transform-origin: top;
+}
+
+.modal {
+    background-color: var(--white);
+    min-height: 100px;
+    width: 90vw;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.div_title_modal{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px;
+
+}
+
+
+.title_modal{
+    font-family: var(--font);
+    font-weight: bold;
+}
+
+
+.closed_btn{
+    font-family: var(--font);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.div_input{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    gap: 20px;
+}
+
+
+.input_create{
+    height: 20px;
+    width: 240px;
+    border-radius: 20px;
+    padding-left: 8px;
+    border: 2px solid var(--blue-color-3);
+    font-family: var(--font);
+}
+
+.close_modal{
+    display: none;
+}
+
+
+select{
+    height: 27px;
+    width: 250px;
+    border-radius: 20px;
+    padding-left: 8px;
+    border: 2px solid var(--blue-color-3);
+    font-family: var(--font);
+}
+
+@keyframes growDown {
+    0% {
+        opacity: 0;
+        transform: rotateX(-90deg);
+    }
+
+    50% {
+        transform: rotateX(-20deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: rotateX(0deg);
+    }
+}
+
+
+.toast{
+    font-family: var(--font);
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    color: var(--white);
+}
+
+.none{
+    display: none;
+}
+
+.close_menu {
+    display: none;
+}
+
+@media(min-width:768px) {
+
+    .flex{
+        position: fixed;
+    }
+
+    .div_aside_full {
+        width: 250px;
+        align-items: center;
+        height: 100vh !important;
+    }
+
+    
+.toast{
+    font-family: var(--font);
+    width: 20%;
+    height: 50px;
+    text-align: center;
+    color: var(--white);
+}
+
+    .logo_negreiros {
+        right: 0px;
+    }
+
+    .menu_img {
+        display: none;
+    }
+
+    .div_aside_up {
+        position: relative;
+        bottom: 24vh;
+    }
+
+    .close_menu {
+        display: none;
+    }
+
+    .menu_order {
+        display: flex;
+    }
+
+    .close_menu_div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .flex {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .section_search {
+        width: 80vw;
+    }
+
+    .div_create_search {
+        flex-direction: row;
+        margin: 20px
+    }
+
+    .bg_card_company {
+        width: 10vw;
+        margin: 10px;
+    }
+
+    .input_company {
+        width: 340px;
+    }
+
+
+    .all_cards_company {
+        flex-wrap: wrap;
+        overflow-y: scroll;
+        flex-direction: column;
+        width: 82vw;
+        height: 230px;
+        position: relative;
+        top: 120px;
+        align-items: center;
+        justify-content: center;
+        
+    }
+
+    .modal{
+        width: 500px;
+        position:relative;
+        left: 8.052vw;
+    }
+
+}

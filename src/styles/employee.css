@@ -1,0 +1,402 @@
+* {
+    scrollbar-width: auto;
+    scrollbar-color: #bababa #ffffff;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 13px;
+}
+
+
+
+*::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #bababa;
+    border-radius: 10px;
+    border: 3px solid #ffffff;
+}
+
+.toast {
+    font-family: var(--font);
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    color: var(--white);
+}
+
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+a {
+    text-decoration: none !important;
+    color: var(--white) !important;
+}
+
+.div_aside_full {
+    background: rgb(37, 37, 37);
+    background: linear-gradient(71deg, rgba(37, 37, 37, 1) 0%, rgba(3, 46, 126, 1) 100%);
+    width: 100vw;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    animation: growDown 400ms ease-in-out forwards;
+    transform-origin: top;
+}
+
+.div_img_open {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo_negreiros {
+    position: relative;
+    right: 8px;
+    bottom: 70px;
+    width: 250px;
+    height: 250px;
+}
+
+.menu_img {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    top: 30px;
+}
+
+.close_menu {
+    font-size: 2rem;
+    color: var(--white);
+    position: relative;
+    top: 30px;
+    right: 15px;
+    font-family: var(--font);
+
+}
+
+.close_menu_div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    bottom: 70px;
+}
+
+
+.div_aside_up {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+
+
+.menu_nav {
+    font-family: var(--font);
+    color: var(--white);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.div_aside_down {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 40px;
+    justify-content: center;
+}
+
+.btn_logout {
+    width: 80px;
+    height: 25px;
+    border-radius: 8px;
+    border: 2px solid var(--blue-color-3);
+    color: var(--blue-color-2);
+    font-family: var(--font);
+    font-weight: 600;
+    background-color: var(--white);
+    text-align: center;
+    cursor: pointer;
+
+}
+
+
+.none {
+    display: none;
+}
+
+.menu_order {
+    display: none;
+}
+
+.close_menu_div {
+    animation: growDown 400ms ease-in-out forwards;
+    transform-origin: top;
+}
+
+
+
+.section_all_employee {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 80vw;
+}
+
+.div_btn_employee {
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.div_input_employee {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    gap: 10px;
+}
+
+
+.btn2 {
+    width: 120px;
+    height: 45px;
+    border-radius: 8px;
+    border: 2px solid var(--blue-color-3);
+    color: var(--blue-color-2);
+    font-family: var(--font);
+    font-weight: 600;
+    background-color: var(--white);
+    text-align: center;
+    cursor: pointer;
+}
+
+.input_employee {
+    width: 200px;
+    height: 30px;
+    border-radius: 8px;
+    text-align: left;
+    padding-left: 8px;
+    border: 2px solid var(--blue-color-3);
+    color: var(--blue-color-2);
+    font-family: var(--font);
+    font-weight: 600;
+}
+
+.title_all_employee {
+    font-family: var(--font);
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.all_cards_employee {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    gap: 20px;
+    width: 100vw;
+    overflow: scroll;
+    margin-bottom: 30px;
+    transition: all .6s ease-in-out;
+    -webkit-transition: all .6s ease-in-out;
+    scroll-behavior: smooth;
+}
+
+
+.bg_card_employee {
+    background-color: rgb(230, 230, 230);
+    margin: 10px;
+    padding: 50px;
+    height: 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 20px;
+
+
+}
+
+.name_employee {
+    font-family: var(--font);
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 2px solid rgba(3, 46, 126, 1);
+}
+
+.level_professional {
+    font-family: var(--font);
+    text-align: center;
+}
+
+.kind_of_work {
+    font-family: var(--font);
+    text-align: center;
+}
+
+.title_all_employee_off_company {
+    font-family: var(--font);
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.all_cards_employees_off_company {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    gap: 20px;
+    width: 100vw;
+    overflow: scroll;
+    margin-bottom: 30px;
+    transition: all .6s ease-in-out;
+    -webkit-transition: all .6s ease-in-out;
+    scroll-behavior: smooth;
+}
+
+
+
+@keyframes growDown {
+    0% {
+        opacity: 0;
+        transform: rotateX(-90deg);
+    }
+
+    50% {
+        transform: rotateX(-20deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: rotateX(0deg);
+    }
+}
+
+
+
+@media(min-width:768px) {
+    .flex {
+        position: fixed;
+    }
+
+
+    .toast {
+        font-family: var(--font);
+        width: 20%;
+        height: 50px;
+        text-align: center;
+        color: var(--white);
+    }
+
+    .div_aside_full {
+        width: 250px;
+        align-items: center;
+        height: 100vh !important;
+    }
+
+    .logo_negreiros {
+        right: 0px;
+    }
+
+    .menu_img {
+        display: none;
+    }
+
+    .div_aside_up {
+        position: relative;
+        bottom: 24vh;
+    }
+
+    .close_menu {
+        display: none;
+    }
+
+    .menu_order {
+        display: inline;
+    }
+
+    .close_menu_div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .flex {
+        justify-content: initial;
+        align-items: initial;
+        flex-direction: row;
+        position: fixed;
+
+    }
+
+
+    .section_all_employee {
+        position: relative;
+    }
+
+    .div_btn_employee {
+        flex-direction: row;
+    }
+
+    .input_employee {
+        width: 300px;
+
+    }
+
+    .items {
+        background-color: #bababa;
+        width: 250px;
+    }
+
+    .bg_card_employee {
+        width: 10vw;
+        margin: 10px;
+    }
+
+    .all_cards_employee {
+        flex-wrap: wrap;
+        overflow-y: scroll;
+        flex-direction: column;
+        width: 80vw;
+        height: 157px;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .all_cards_employees_off_company {
+        flex-wrap: wrap;
+        overflow-y: scroll;
+        flex-direction: column;
+        width: 80vw;
+        height: 157px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .btn2 {
+        width: 12vw;
+    }
+
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./src/assets/favicon.png">
+    <link rel="stylesheet" href="./src/styles/components.css">
+    <link rel="stylesheet" href="./src/styles/index.css">
+    <link rel="stylesheet" href="./src/styles/buttons.css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <title>Negreiros ERP</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="header_div">
+            <img class="logo_negreiros" src="./src/assets/logoNegreiros.png" alt="logo Negreiros ERP">
+            <div class="header_div_btn">
+                <button class="btn btnLogin"> <a href="./src/pages/login.html">Login</a></button>
+                <button class="btn btnRegister"><a href="./src/pages/signup.html">Registrar</a></button>
+            </div>
+        </div>
+    </header>
+
+
+
+    <section>
+        <div class="section_first_div">
+            <div class="section_text">
+                <h2 class="text_about">O sistema de gestão feito para simplificar a operação do seu negócio
+                </h2>
+                <p class="text_resume">Tenha uma integração completa com seu contador. Ganhe mais eficiência nas gestões
+                    contábeis e empresariais.</p>
+            </div>
+            <div class="section_div_img">
+                <img class="man_work" src="./src/assets/manWork.gif" alt="">
+            </div>
+        </div>
+
+        <div class="div_arrow">
+            <a href=""><img class="arrow" src="./src/assets/seta.png" alt=""></a>
+        </div>
+    </section>
+
+
+
+    <section>
+        <div class="div_input">
+            <input class="input_search" placeholder="Pesquise pelo nome ou por secão da empresa" type="text">
+            <button class="search_btn"><img class="icon_search" src="./src/assets/searchIcon.png" alt=""></button>
+
+        </div>
+
+
+
+        <div class="div_text_info_company">
+            <p class="text_company">Seja um dos nossos clientes, temos a solução perfeita para sua empresa e
+                necessidade.
+                Conheça as empresas que usam nosso ERP:
+            </p>
+        </div>
+
+        <div class="cards_complete_div">
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="./src/scripts/homePage.js"></script>
+</body>
+
+</html>
