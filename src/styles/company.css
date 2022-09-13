@@ -344,7 +344,13 @@ select{
     color: var(--white);
 }
 
+.none{
+    display: none;
+}
 
+.close_menu {
+    display: none;
+}
 
 @media(min-width:768px) {
 

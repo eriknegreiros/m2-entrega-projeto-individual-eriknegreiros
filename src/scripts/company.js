@@ -61,13 +61,13 @@ class Company {
 
             allCardsCmpany.innerHTML = ''
 
-            
+
             data.forEach((element) => {
                 const bgCard = document.createElement('div')
                 const nameCompany = document.createElement('h1')
                 const hourCompany = document.createElement('p')
                 const activityCompany = document.createElement('p')
-                
+
 
 
                 bgCard.classList.add('bg_card_company')
@@ -84,7 +84,11 @@ class Company {
                 bgCard.append(nameCompany, hourCompany, activityCompany)
                 allCardsCmpany.append(bgCard)
             })
-        } else {}
+        } else {
+            const divSearch = document.querySelector('.div_create_search')
+
+            divSearch.classList.add('none')
+        }
     }
 
     static searchCompany() {
@@ -182,11 +186,11 @@ class Company {
                     }
                     await Request.requestCreateCompany(data)
                     const enterprise = await Request.requestCompanyHomePage()
-                    
+
                     Company.renderCompany(enterprise)
                     createModal.classList.toggle('close_menu')
                 })
-               
+
                 divInput.append(inputName, inputHour, inputdescr, select, btnSend)
                 divTitleModal.append(TitleModal, closedBtn)
                 modal.append(divTitleModal, divInput)

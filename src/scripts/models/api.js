@@ -153,7 +153,7 @@ export class Request {
 
     static async requestEditDepartment(id, body) {
         const base = await instanceB
-            .patch(`/${id}`, body)
+            .patch(`/departments/${id}`, body)
             .then((res) => {
                 Toast.create('Departamento Atualizado com Sucesso', "#00992e")
                 return res.data
@@ -167,7 +167,7 @@ export class Request {
 
     static async requestDeleteDepartment(id) {
         const base = await instanceB
-            .delete(`/${id}`)
+            .delete(`/departments/${id}`)
             .then((res) => {
                 Toast.create('Departamento Excluido com Sucesso', "#00992e")
                 return res.data
@@ -260,6 +260,23 @@ export class Request {
                 console.log(err)
         })
             
+        return base
+    }
+
+    static async requestDepartamentUser(){
+        const base = await instanceB
+        .get(`/users/departments`)
+        .then(res => res.data)
+        .catch(err => console.log(err))
+        return base
+    }
+
+    static async requestEmployeeUser(){
+        const base = await instanceB
+        .get(`/users/departments/coworkers
+        `)
+        .then(res => console.log(res.data))
+        .catch(err => console.log(err))
         return base
     }
 }
