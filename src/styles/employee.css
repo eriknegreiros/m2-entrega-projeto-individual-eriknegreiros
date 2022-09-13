@@ -175,7 +175,7 @@ a {
 
 
 .btn2 {
-    width: 12vw;
+    width: 120px;
     height: 45px;
     border-radius: 8px;
     border: 2px solid var(--blue-color-3);
@@ -199,7 +199,7 @@ a {
     font-weight: 600;
 }
 
-.title_all_employee{
+.title_all_employee {
     font-family: var(--font);
     font-size: 2rem;
     font-weight: bold;
@@ -254,14 +254,14 @@ a {
     text-align: center;
 }
 
-.title_all_employee_off_company{
+.title_all_employee_off_company {
     font-family: var(--font);
     font-size: 2rem;
     font-weight: bold;
     text-align: center;
 }
 
-.all_cards_employees_off_company{
+.all_cards_employees_off_company {
     display: flex;
     align-items: center;
     margin-top: 15px;
@@ -385,7 +385,7 @@ a {
 
     }
 
-    .all_cards_employees_off_company{
+    .all_cards_employees_off_company {
         flex-wrap: wrap;
         overflow-y: scroll;
         flex-direction: column;
@@ -393,6 +393,10 @@ a {
         height: 157px;
         align-items: center;
         justify-content: center;
+    }
+
+    .btn2 {
+        width: 12vw;
     }
 
 }

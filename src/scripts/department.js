@@ -63,25 +63,36 @@ export class Dashboard {
 
 class Department {
     static renderDepartment(data) {
-        const allDepartmentCards = document.querySelector('.all_departments_cards')
+        if(localStorage.getItem('is_admin') == 'true'){
+            const allDepartmentCards = document.querySelector('.all_departments_cards')
 
-        allDepartmentCards.innerHTML = ''
+            allDepartmentCards.innerHTML = ''
+    
+            data.forEach((element) => {
+                const bgDepartmentCard = document.createElement('div')
+                const departmentTitle = document.createElement('h1')
+                const departmentDescription = document.createElement('p')
+    
+                bgDepartmentCard.classList.add('bg_department_card')
+                departmentTitle.classList.add('department_tile')
+                departmentDescription.classList.add('department_description')
+    
+                departmentTitle.innerText = element.name
+                departmentDescription.innerText = element.description
+    
+                bgDepartmentCard.append(departmentTitle, departmentDescription)
+                allDepartmentCards.append(bgDepartmentCard)
+            })
+        } else{
+            const divBtn = document.querySelector('.div_department_btn')
 
-        data.forEach((element) => {
-            const bgDepartmentCard = document.createElement('div')
-            const departmentTitle = document.createElement('h1')
-            const departmentDescription = document.createElement('p')
+            const divInput = document.querySelector('.div_department_input')
 
-            bgDepartmentCard.classList.add('bg_department_card')
-            departmentTitle.classList.add('department_tile')
-            departmentDescription.classList.add('department_description')
-
-            departmentTitle.innerText = element.name
-            departmentDescription.innerText = element.description
-
-            bgDepartmentCard.append(departmentTitle, departmentDescription)
-            allDepartmentCards.append(bgDepartmentCard)
-        })
+            divBtn.classList.add('none')
+            divInput.classList.add('none')
+        }
+        
+        
     }
 
     static async createDepartment() {
@@ -228,6 +239,10 @@ class Department {
                     await Request.requestEditDepartment(id, data)
 
                     modalDepartment.classList.toggle('close_menu')
+                    
+                    const listOfDepartment = await Request.requestDepartment()
+
+                    Department.renderDepartment(listOfDepartment)
                 })
 
 
@@ -302,6 +317,10 @@ class Department {
                     
 
                     modalDepartment.classList.toggle('close_menu')
+
+                    const listOfDepartment = await Request.requestDepartment()
+
+                    Department.renderDepartment(listOfDepartment)
                 })
 
             })

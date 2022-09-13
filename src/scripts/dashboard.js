@@ -130,28 +130,19 @@ class Sector {
 
             const bgColor = document.querySelector('.bg_color')
 
-            const nameTitle = document.createElement('h1')
-
-            nameTitle.innerText = 'Setor da Empresa'
-            nameTitle.classList.add('name_of_title')
-
-            bgColor.append(nameTitle)
+            bgColor.style.display = 'none'
         }
     }
 }
 
 class Department {
-    static renderDepartment(data) {
+    static  renderDepartment(data) {
         if (localStorage.getItem('is_admin') == 'true') {
 
             const divCompany = document.querySelector('.div_company')
-
             const bgColor = document.createElement('div')
-
             bgColor.classList.add('bg_color')
-
             const titleDepartment = document.createElement('h1')
-
 
             titleDepartment.innerText = 'Departamentos'
 
@@ -160,33 +151,43 @@ class Department {
 
             divCompany.append(bgColor)
 
-            data. splice(0,8).forEach((element, index) => {
+            data.splice(0, 8).forEach((element, index) => {
                 const nameDepartment = document.createElement('p')
 
                 nameDepartment.classList.add('name_of_department')
-
                 nameDepartment.innerText = `${index + 1} - ${element.name}`
-
                 bgColor.append(nameDepartment)
             })
-        } else {
+        } 
+    }
+    static  renderUserDepartment(data) {
+        
+        if (localStorage.getItem('is_admin') == 'false') {
+
             const divCompany = document.querySelector('.div_company')
-
             const bgColor = document.createElement('div')
-
             bgColor.classList.add('bg_color')
-
             const titleDepartment = document.createElement('h1')
 
-
-            titleDepartment.innerText = 'Departamento da Empresa'
+            titleDepartment.innerText = 'Departamentos'
 
             titleDepartment.classList.add('title_department')
             bgColor.append(titleDepartment)
 
             divCompany.append(bgColor)
-        }
+
+            data.departments.forEach((element, index) => {
+                const nameDepartment = document.createElement('p')
+
+                nameDepartment.classList.add('name_of_department')
+                nameDepartment.innerText = `${index + 1} - ${element.name}`
+                bgColor.append(nameDepartment)
+            })
+            
+        } 
     }
+
+
 }
 
 
@@ -210,7 +211,7 @@ class company {
 
             divCompany.append(bgColor)
 
-            data.splice(0,8).forEach((element, index) => {
+            data.splice(0, 8).forEach((element, index) => {
                 const nameCompany = document.createElement('p')
 
                 nameCompany.classList.add('name_of_company')
@@ -219,7 +220,14 @@ class company {
 
                 bgColor.append(nameCompany)
             })
-        } else{
+        } else {}
+    }  
+}
+
+class EmployeeUser {
+    static renderEmployee(data) {
+        if (localStorage.getItem('is_admin') == 'false') {
+
             const divCompany = document.querySelector('.div_company')
 
             const bgColor = document.createElement('div')
@@ -229,16 +237,26 @@ class company {
             const titleCompany = document.createElement('h1')
 
 
-            titleCompany.innerText = 'Empresa'
+            titleCompany.innerText = 'Funcionarios do mesmo Departamento'
 
             titleCompany.classList.add('title_company')
             bgColor.append(titleCompany)
 
             divCompany.append(bgColor)
+
+            data.forEach((element, index) => {
+                const nameCompany = document.createElement('p')
+
+                nameCompany.classList.add('name_of_company')
+
+                nameCompany.innerText = `${index + 1} - ${element.username}`
+
+                bgColor.append(nameCompany)
+            })
+           
         }
     }
 }
-
 
 Dashboard.Userlogged()
 Dashboard.showMenu()
@@ -251,6 +269,7 @@ NameUser.nameOfUser(user)
 const section = await Request.requestSector()
 Sector.renderSector(section)
 
+
 const department = await Request.requestDepartment()
 Department.renderDepartment(department)
 
@@ -258,3 +277,11 @@ Department.renderDepartment(department)
 const enterprise = await Request.requestCompanyHomePage()
 
 company.renderCompany(enterprise)
+
+const response = await Request.requestDepartamentUser()
+
+
+Department.renderUserDepartment(response)
+
+const worker = await Request.requestEmployeeUser()
+EmployeeUser.renderEmployee(worker)

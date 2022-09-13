@@ -27,9 +27,6 @@
 }
 
 
-.none{
-    display: none;
-}
 
 .flex {
     display: flex;
@@ -434,6 +431,11 @@ select {
     font-size: 1.2rem;
 }
 
+
+.none{
+    display: none;
+}
+
 @keyframes growDown {
     0% {
         opacity: 0;
@@ -450,6 +452,9 @@ select {
     }
 }
 
+.close_menu {
+    display: none;
+}
 
 
 @media(min-width:768px) {
