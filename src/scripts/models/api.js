@@ -40,7 +40,7 @@ export class Request {
                 localStorage.setItem('uuid', res.data.uuid)
                 Toast.create('Login Realizado com sucesso', "#00992e")
                 setTimeout(() => {
-                    window.location.replace("./src/pages/dashboard.html")
+                    window.location.replace("../pages/dashboard.html")
                 }, 1000)
                 return res.data
             })
@@ -57,7 +57,7 @@ export class Request {
             .then((res) => {
                 Toast.create('Conta criada com Sucesso', "#00992e")
                 setTimeout(() => {
-                    window.location.replace("./src/pages/login.html")
+                    window.location.replace("../pages/login.html")
                 }, 1000)
                 return res
             })
@@ -82,7 +82,7 @@ export class Request {
             .then((res) => {
                 Toast.create('Dados Atualizados com Sucesso', "#00992e")
                 setTimeout(() => {
-                    window.location.replace('./src/pages/dashboard.html')
+                    window.location.replace('../pages/dashboard.html')
                 }, 3000)
                 console.log(res)
             })
