@@ -243,8 +243,9 @@ class EmployeeUser {
             bgColor.append(titleCompany)
 
             divCompany.append(bgColor)
-
+            
             data.forEach((element, index) => {
+                
                 const nameCompany = document.createElement('p')
 
                 nameCompany.classList.add('name_of_company')
@@ -253,7 +254,8 @@ class EmployeeUser {
 
                 bgColor.append(nameCompany)
             })
-           
+
+
         }
     }
 }
@@ -283,5 +285,6 @@ const response = await Request.requestDepartamentUser()
 
 Department.renderUserDepartment(response)
 
-const worker = await Request.requestEmployeeUser()
-EmployeeUser.renderEmployee(worker)
+
+const users = await Request.requestEmployeeUser()
+EmployeeUser.renderEmployee(users)

@@ -315,7 +315,6 @@ class Department {
                     await Request.requestDeleteDepartment(id)
 
                     
-
                     modalDepartment.classList.toggle('close_menu')
 
                     const listOfDepartment = await Request.requestDepartment()

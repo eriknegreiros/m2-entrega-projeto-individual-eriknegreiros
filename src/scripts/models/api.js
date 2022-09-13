@@ -81,12 +81,12 @@ export class Request {
             .patch(`/users`, body)
             .then((res) => {
                 Toast.create('Dados Atualizados com Sucesso', "#00992e")
-                setTimeout(() => {
-                    window.location.replace('../pages/dashboard.html')
-                }, 3000)
-                console.log(res)
+                return res
             })
-            .catch(err => console.log(err))
+            .catch((err) =>{
+                Toast.create('Não atualizado, verifique os dados', "#d90a02")
+                return err
+            })
         return base
     }
 
@@ -275,7 +275,9 @@ export class Request {
         const base = await instanceB
         .get(`/users/departments/coworkers
         `)
-        .then(res => console.log(res.data))
+        .then((res) =>{
+            return res.data[0].users
+        })
         .catch(err => console.log(err))
         return base
     }

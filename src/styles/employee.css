@@ -39,7 +39,7 @@
 
 a {
     text-decoration: none !important;
-    color: white !important;
+    color: var(--white) !important;
 }
 
 .div_aside_full {
@@ -76,7 +76,7 @@ a {
 
 .close_menu {
     font-size: 2rem;
-    color: white;
+    color: var(--white);
     position: relative;
     top: 30px;
     right: 15px;
@@ -106,7 +106,7 @@ a {
 
 .menu_nav {
     font-family: var(--font);
-    color: white;
+    color: var(--white);
     font-size: 1.5rem;
     cursor: pointer;
 }
@@ -128,7 +128,7 @@ a {
     color: var(--blue-color-2);
     font-family: var(--font);
     font-weight: 600;
-    background-color: white;
+    background-color: var(--white);
     text-align: center;
     cursor: pointer;
 
@@ -182,7 +182,7 @@ a {
     color: var(--blue-color-2);
     font-family: var(--font);
     font-weight: 600;
-    background-color: white;
+    background-color: var(--white);
     text-align: center;
     cursor: pointer;
 }

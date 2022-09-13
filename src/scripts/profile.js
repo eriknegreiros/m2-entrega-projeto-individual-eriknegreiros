@@ -52,13 +52,20 @@ export class Dashboard {
 
 class ChangeProfile {
 
-    static changeUser() {
+    static async changeUser() {
 
         if (localStorage.getItem('is_admin') == 'false') {
             const username = document.querySelector('.username_profile')
             const email = document.querySelector('.email_profile')
             const password = document.querySelector('.password_profile')
             const btn = document.querySelector('.btn_atualizar')
+
+            const user = await Request.requestUser()
+
+            username.value = user.username
+            email.value = user.email 
+            password.value = '******'
+
 
 
             btn.addEventListener('click', async (event) => {
@@ -70,6 +77,7 @@ class ChangeProfile {
                     password: password.value
                 }
                 await Request.requestChangeProfile(base)
+                console.log(base)
             })
         }
     }
@@ -81,5 +89,6 @@ console.log('osdasdasdasdadsi')
 Dashboard.showMenu()
 
 const user = await Request.requestUser()
+console.log(user)
 
 ChangeProfile.changeUser(user)
